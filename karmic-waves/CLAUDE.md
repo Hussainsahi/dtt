@@ -1,100 +1,65 @@
 # KARMIC WAVES — PROJECT RULES (read at the start of every session)
 
 ## 1. Mission
-Build Karmic Waves, a premium personalized sound healing website, from scratch: a public site that matches reference-design.png, a ₹299 purchase flow, customer login and dashboard, an admin panel, and WhatsApp delivery. You act as senior product designer, frontend developer, backend developer, database architect, payment engineer, WhatsApp API developer, security engineer and QA engineer.
+Karmic Waves is a **free Birth-Month Sound landing page** whose only job is to convert Meta Ads traffic into WhatsApp leads.
 
-Brand: Karmic Waves. Tagline: Personalized Sound Healing.
+Flow: Landing → pick DOB → processing animation → result card → enter WhatsApp number → opens WhatsApp with a prefilled message → the 3 free tracks for the user's birth month are delivered on WhatsApp.
+
+Out of scope on this page: pricing, checkout, payment gateways, paid pitches, problem quizzes, customer login, dashboards. Paid offers are handled inside WhatsApp, not here.
+
+Brand: Karmic Waves. Positioning line: "Ancient Vedic Naad-Vigyan • 100% free birth-sound tool".
 
 ## 2. Non-negotiable rules
-### Price
-- The product price is ₹299 (stored as 29900 paise, currency INR). Defined once server-side; the client never sets the amount.
-- Never display any invented original price, discount or "was" price. Add no other price without authorization.
+### Never fake
+- No live counters, invented ratings, invented testimonials, invented kit counts.
+- No "stored", "sent" or "delivered" state unless the backend confirmed it. Opening `wa.me` is **not** delivery.
+- Meta Pixel `Lead` fires once, only after the backend accepted the lead, with an `event_id` for dedupe. Never send DOB or phone to the Pixel.
+- No file-format or file-size claims unless the track entry is `verified: true` in config.
+- No scientific, medical, psychological, financial or astrological validity claims. The month → element/Hz mapping is a traditional-inspired creative mapping; say so when needed, never call it astronomical or validated.
 
-### Honesty
-- Karmic Waves is a wellness and entertainment experience. Make no medical, scientific or supernatural analysis claims anywhere (copy, status messages, FAQ).
-- Processing messages must reflect real application state. No fake percentages, no fake background work. A minimum display time of about 400 ms per message for legibility is allowed and must be documented.
-- Never invent credentials, payments, reviews, audio files, customers or successful API calls. Never say a payment succeeded or a WhatsApp message was sent without server-side confirmation.
-- Missing credentials or assets: continue all independent work and document exactly what is missing.
+### Privacy and security
+- Collect only DOB, phone (+91 only), consent flag + timestamp, and attribution (UTM / fbclid / source). Nothing else.
+- Secrets live only in server environment variables. `.env.example` lists them. Nothing secret ships to the browser.
+- Backend validates DOB and phone again, rate-limits, deduplicates leads, and retention is configurable.
+- Legal pages state exactly what is stored and why. Unknown business facts read `[CLIENT TO CONFIRM]`.
 
-### Security and privacy
-- Secrets live only in server environment variables. Provide .env.example. Never commit secrets. Never ship secrets or private storage URLs to the browser.
-- Private audio and PDFs are never public. They are served only through short-lived signed URLs (5 minutes or less), issued after a server-side authorization check, and never logged.
-- Validate every input server-side (zod). Sanitize output. Rate limit all public endpoints. Use security headers (CSP, HSTS, X-Content-Type-Options, frame protections).
-- Collect only DOB, WhatsApp number and optional name. Record consent with timestamp and consent text version. Provide a data-deletion request path.
-- Customers can read only their own records. Enforce this in server code and with tests.
+### Accessibility and performance
+- Semantic HTML, labelled inputs, keyboard operable, visible focus, skip link, `prefers-reduced-motion` honoured.
+- No duplicate listeners; every rAF, interval and AudioContext is cancelled/closed. Audio only starts on a user click.
+- Mobile-first, max content width 460px, fast on low-end Android. Limit loaded font weights.
 
-## 3. Authority order
-1. This file's copy deck and rules decide wording and behavior.
-2. reference-design.png decides layout, proportions, colors, components and mood.
-3. Professional judgment fills the rest.
+## 3. Audio library contract
+- 36 files = 12 months × 3 tracks: **Morning Aura Igniter**, **Daytime Focus Shield**, **11:00 PM Deep Night Ritual**.
+- One editable object `KW.config.months` (in `src/config.js`), one entry per month: `{ element, hz, tattva, tracks: [{ id, title, file, format, sizeBytes, verified: false } ×3] }`.
+- Element / Hz: Jan Prithvi 396 · Feb Jala 417 · Mar Agni 432.8 · Apr Vayu 528 · May Akasha 639 · Jun Jala 417 · Jul Agni 432.8 · Aug Prithvi 396 · Sep Vayu 528 · Oct Akasha 741 · Nov Jala 417 · Dec Akasha 852.
+- Audio is chosen by **birth month only**. Day and year never affect selection.
+- `scripts/validate-audio.mjs` must prove all 36 files resolve before deploy and fail loudly otherwise.
 
-If the image and the copy deck disagree on text, the copy deck wins. Capitalization style follows the image (for example "Special Offers", "Get Started Now").
+## 4. Architecture
+- Static frontend, no framework. Source in `src/` (`index.html`, `styles.css`, `config.js`, `app.js`). `node scripts/build.mjs` inlines them into the single-file bundle `dist/karmic-waves-website.html`. **Edit source, rebuild the bundle.**
+- Backend: Vercel serverless functions in `api/` (`lead.js`, `whatsapp-webhook.js`) with pluggable adapters in `lib/` for storage, Pixel Conversions API and WhatsApp delivery. Missing credentials → adapter reports `PENDING`, never pretends.
+- Config lives in one place: `KW.config` (frontend) and environment variables (backend).
 
-## 4. Intentional deviations from the reference image
-- No crossed-out original price next to ₹299.
-- The caption "Analyzing your energy pattern…" is replaced by the honest status messages in the copy deck.
-- Offer title, benefit list and trust-row wording come from the copy deck.
-- Review cards use neutral illustrated avatars and SAMPLE-labelled placeholder text, not photos of people presented as customers.
-- Footer adds Privacy Policy and Refund Policy links; the image shows only FAQ, T&C and Contact.
-- The hero photo is used only from a supplied asset. If none exists, build a temporary original cosmic composition (SVG/CSS gradients, mountain silhouette, particles) and document it. Do NOT crop the reference screenshot into the site.
-- "0:00 / 10:00" becomes real durations read from audio metadata ("0:00 / --:--" until loaded or when locked).
-- No other deviations without approval.
+## 5. Copy deck (exact wording)
+- Activity bar: "People are exploring their Birth-Month Sound Frequency right now."
+- Badge: "ANCIENT VEDIC NAAD-VIGYAN • 100% FREE BIRTH-SOUND TOOL"
+- H1: "Your Birth Date Has a Sound. Hear Yours — Free."
+- Sub: "Every birth month carries its own vibration in traditional Vedic sound practice. Select your Date of Birth to explore your 3 Free Birth-Month Sound Tracks."
+- Readout: "Natal Resonance Detected: [Element] • Base Acoustic Tuning: [Hz]"
+- CTA: "Synthesize My Free Birth-Date Audio →"
+- Processing nodes: "Matching your birth-month sound profile..." / "Preparing your Vedic-inspired acoustic frequency..." / "Layering Tanpura drone & Singing Bowl-inspired harmonics..." / "Your 3 Free Birth-Month Sound Tracks Are Ready!"
+- Kit name: `KarmicWaves_[Month]_FreeKit` (no extension, no exact DOB).
+- Form button: "Send My 3 Free Audio Tracks on WhatsApp"
+- Consent: "By tapping above, you opt in to receive your customized birth-date audio files on WhatsApp. 100% Free & Private."
+- WhatsApp prefill: "Namaste Karmic Waves, please send my 3 Free Birth-Month Audio Tracks for DOB: [DOB]"
+- Reviews title: "How People Experience Their Birth-Month Sound at 11:00 PM" (approved reviews from config only; section hidden otherwise)
+- Disclaimer: "Disclaimer: Karmic Waves synthesizes personalized acoustic soundscapes inspired by traditional Vedic Naad principles for meditation, relaxation, and mindfulness. This tool does not provide medical, psychological, or financial advice, and results vary by individual practice."
 
-## 5. Technical decisions (already made; do not re-ask)
-- Frontend: Next.js (App Router), TypeScript strict, React, Tailwind CSS, Framer Motion, lucide-react, next/font, next/image.
-- Backend: Next.js route handlers and server actions. zod for validation.
-- Database: Supabase PostgreSQL via Prisma (pooled for runtime, direct for migrations). RLS on every table with no anon/authenticated policies.
-- Auth: Custom. Customers: phone + OTP. Admins: admin_users with email + password (argon2), separate cookie and middleware. Opaque random session tokens stored hashed; httpOnly + Secure + SameSite=Lax cookies. Origin check on mutating routes.
-- OTP: MSG91. 5-minute expiry, hashed storage, max 5 verify attempts, 5 sends/hour/phone plus per-IP limits. Dev console OTP only when OTP_MODE=dev and NODE_ENV!=production. DLT registration is a prerequisite.
-- Rate limiting: Upstash Redis or Postgres-backed counters.
-- Storage: Cloudflare R2 (private, S3 API). Presigned PUT uploads; short-lived signed GET downloads.
-- Payments: Razorpay (test mode until production keys exist).
-- WhatsApp: Official Meta WhatsApp Cloud API.
-- Hosting: Vercel. Cron route handlers under /api/cron/* protected by CRON_SECRET, every 15 minutes (Hobby: use Supabase pg_cron or an external scheduler).
-- Email alerts (optional): Resend or SMTP.
-- Testing: Vitest (unit), Playwright (browser, screenshots, e2e).
-- Store UTC, display IST. Normalize phones to E.164 (libphonenumber-js).
-- Guest checkout (DOB + WhatsApp + consent). Order-scoped access cookie after verified payment. Dashboard needs OTP login by the same number.
+## 6. Palette and type
+Outer `#0A0E17`, inner `#141E30`, gold `#D4AF37`, light gold `#F3E5AB`, aqua `#00F2FE`, WhatsApp `#10B981`, text `#F8FAFC`, muted `#94A3B8`. Frosted glass, thin gold borders, aqua glow, cosmic radial gradients, sacred-geometry SVG.
 
-## 6. Design specification
-Reference canvas is 1672×941. Measure from the image rather than guessing.
+## 7. Working method
+INSPECT → BUILD → RUN → TEST (Playwright at 390 / 768 / 1280) → FIX → DOCUMENT. Status words: WORKING · PENDING (missing credential/asset) · CLIENT TO CONFIRM.
 
-### Desktop (≥1280px) layout
-- Sticky header, full width, rounded bottom corners, ~88px tall.
-- Three columns: left ~298px, center fluid (~1000px at 1672), right ~310px, gutters ~40px. Scale smoothly 1280–1920.
-- Center stack: hero banner, DOB + processing card (overlaps hero's lower edge), audio plan card, WhatsApp + payment card.
-- Footer: full-width rounded pill.
-- 768–1279px: center column first, sidebars below in two columns. Under 768px: dedicated single-column mobile layout.
-
-### Tokens
-Sampled values are recorded in docs/architecture.md.
-
-### Components
-Header, Special Offers card, Hero, DOB card, Audio card, WhatsApp card, Reviews sidebar, Footer — see the copy deck below.
-
-## 7. Copy deck (exact wording)
-- Header navigation: Home · How It Works · Our Audios · Reviews · About Us · Login · Get Your Sound Plan
-- Special Offers: heading "Special Offers" · ribbon "Launch Offer" · product "Your Personalized Sound Healing Plan" · price "₹299" · benefits: "Personalized Audio Plan", "Five Guided Audio Tracks", "PDF Stickers (Printable)", "Delivery Within 24 Hours" · button "Get Started Now" (smooth-scrolls to the DOB section).
-- Hero: title "Your Personalized Healing Sound" · subtitle "Enter your Date of Birth and let the cosmic frequencies create a unique audio experience for you."
-- (A) "(A) Your Date of Birth" · placeholders DD, MM, YYYY · privacy line: "By continuing you agree to our Privacy Policy." (links to /privacy).
-- (B) "(B) Processing..." · idle caption "Enter your date of birth to begin." · real-status messages in order: "Receiving your information." / "Preparing your personalized sound experience." / "Organizing your audio plan." / "Your experience is ready."
-- (C) "(C) Your Personalized Audio Plan" · label "3 Audio Files (More Inside)" (becomes "5 Audio Files" after reveal)
-  - Morning Charge — "Charge Your Mind & Energy"
-  - Night Relaxation — "Deep Calm & Better Sleep"
-  - Focus & Work — "Deep Focus & Productivity"
-  - Tile "+ More Audios" reveals a second row (tile becomes "Show Less"): Manifestation — "Positive Mindset & Intentions"; Emergency Aura Shield — "A Guided Moment of Calm"
-- (D) "(D) Your WhatsApp Number" · default +91 · placeholder "Enter your WhatsApp number" · consent: "I agree to receive my order updates and audio files on WhatsApp." · button "Proceed to Payment – ₹299" · trust row: "Five Personalized Audios", "PDF Stickers", "Delivery Within 24 Hours", "Secure Payment" · disclaimer: "Karmic Waves is a wellness and entertainment experience, not medical advice."
-- Reviews: heading "Customer Reviews" · button "View More Reviews". Dev placeholders: "SAMPLE" badge, "Sample Customer", "City", 5 stars, "Sample review. Real customer reviews appear here after approval."
-- Footer: FAQ · T&C · Privacy Policy · Refund Policy · Contact Details · Instagram · YouTube · WhatsApp.
-- Pages: /, /how-it-works, /about, /login, /faq, /terms, /privacy, /refund, /contact.
-- Legal/business pages are drafts marked "DRAFT — requires legal/business review"; undecided terms read "[BUSINESS TO CONFIRM]".
-
-## 8. Working method
-INSPECT → PLAN → BUILD → RUN → TEST → SCREENSHOT → COMPARE → DEBUG → FIX → RETEST → DOCUMENT → REPEAT.
-
-Status vocabulary: IMPLEMENTED · LOCALLY TESTED · SANDBOX TESTED · PRODUCTION CONFIGURED · BLOCKED (missing credentials).
-
-Gate report at the end of every milestone, then STOP.
-
-## 9. When to stop and ask
-Missing reference-design.png; destructive actions; price/honesty changes; unroutable blockers.
+## 8. History
+The earlier "₹299 personalized plan" direction (paid flow, five-track plan, OTP login, admin panel) is retired. Its scaffold is archived at git tag `backup/paid-plan-scaffold` and `docs/archive/`. Do not reintroduce it.

@@ -1,0 +1,19 @@
+{
+  "name": "karmic-waves",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Karmic Waves — free Birth-Month Sound landing page (Meta Ads → WhatsApp leads)",
+  "type": "commonjs",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "build": "node scripts/validate-audio.mjs && node scripts/build.mjs",
+    "build:skip-audio-check": "node scripts/build.mjs",
+    "dev": "node scripts/dev-server.mjs",
+    "test": "node tests/smoke.mjs",
+    "test:api": "node tests/api.test.mjs",
+    "grep:paid": "node scripts/grep-paid-terms.mjs"
+  },
+  "devDependencies": {
+    "playwright": "^1.48.0"
+  }
+}

@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>{{SITE_TITLE}}</title>
+  <meta name="description" content="{{SITE_DESCRIPTION}}">
+  <link rel="canonical" href="{{SITE_URL}}">
+  <meta name="theme-color" content="#0A0E17">
+  <meta name="robots" content="index,follow">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Karmic Waves">
+  <meta property="og:title" content="{{SITE_TITLE}}">
+  <meta property="og:description" content="{{SITE_DESCRIPTION}}">
+  <meta property="og:url" content="{{SITE_URL}}">
+  <meta property="og:image" content="{{SITE_OG_IMAGE}}">
+  <meta property="og:locale" content="{{SITE_LOCALE}}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{SITE_TITLE}}">
+  <meta name="twitter:description" content="{{SITE_DESCRIPTION}}">
+  <meta name="twitter:image" content="{{SITE_OG_IMAGE}}">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%230A0E17'/%3E%3Ccircle cx='32' cy='32' r='22' fill='none' stroke='%23D4AF37' stroke-width='2'/%3E%3Ccircle cx='32' cy='32' r='11' fill='none' stroke='%2300F2FE' stroke-width='2'/%3E%3Ccircle cx='32' cy='32' r='3' fill='%23F3E5AB'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <!-- build:css -->
+  <link rel="stylesheet" href="styles.css">
+  <!-- /build:css -->
+</head>
+<body>
+  <a class="skip-link" href="#dob-console">Skip to the birth-date tool</a>
+
+  <div class="cosmos" aria-hidden="true">
+    <div class="cosmos__glow cosmos__glow--gold"></div>
+    <div class="cosmos__glow cosmos__glow--aqua"></div>
+    <div class="cosmos__stars"></div>
+  </div>
+
+  <div class="activity" role="status" aria-live="polite">
+    <span class="activity__pulse" aria-hidden="true"></span>
+    <span>People are exploring their Birth-Month Sound Frequency right now.</span>
+  </div>
+
+  <main id="main" class="page">
+
+    <!-- ========== HERO ========== -->
+    <header class="hero">
+      <p class="badge">ANCIENT VEDIC NAAD-VIGYAN • 100% FREE BIRTH-SOUND TOOL</p>
+      <h1 class="hero__title">Your Birth Date Has a Sound. <span class="hero__accent">Hear Yours — Free.</span></h1>
+      <p class="hero__sub">Every birth month carries its own vibration in traditional Vedic sound practice. Select your Date of Birth to explore your 3 Free Birth-Month Sound Tracks.</p>
+
+      <ul class="tracks" aria-label="The three free tracks">
+        <li class="tracks__item"><span class="tracks__icon" aria-hidden="true">☀</span><span>Morning Aura Igniter</span></li>
+        <li class="tracks__item"><span class="tracks__icon" aria-hidden="true">◎</span><span>Daytime Focus Shield</span></li>
+        <li class="tracks__item"><span class="tracks__icon" aria-hidden="true">☾</span><span>11:00 PM Deep Night Ritual</span></li>
+      </ul>
+
+      <ul class="trust" id="trust-strip" hidden aria-label="Trust data"></ul>
+    </header>
+
+    <!-- ========== DOB CONSOLE ========== -->
+    <section class="card console" id="dob-console" aria-labelledby="console-title">
+      <div class="mandala" aria-hidden="true">
+        <svg id="mandala" class="mandala__svg" viewBox="0 0 200 200" focusable="false">
+          <defs>
+            <radialGradient id="mg" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#00F2FE" stop-opacity=".35"/>
+              <stop offset="100%" stop-color="#00F2FE" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <circle cx="100" cy="100" r="96" fill="url(#mg)"/>
+          <g class="mandala__ring" fill="none" stroke="#D4AF37" stroke-width="1">
+            <circle cx="100" cy="100" r="88"/>
+            <circle cx="100" cy="100" r="62"/>
+            <circle cx="100" cy="100" r="34"/>
+            <path d="M100 12 L176 56 L176 144 L100 188 L24 144 L24 56 Z"/>
+            <path d="M100 38 L153.7 69 L153.7 131 L100 162 L46.3 131 L46.3 69 Z" stroke="#00F2FE" stroke-opacity=".8"/>
+            <path d="M100 4 L121 79 L196 100 L121 121 L100 196 L79 121 L4 100 L79 79 Z" stroke-opacity=".55"/>
+            <path d="M100 52 L148 100 L100 148 L52 100 Z" stroke="#F3E5AB"/>
+          </g>
+          <circle cx="100" cy="100" r="4" fill="#F3E5AB"/>
+        </svg>
+      </div>
+
+      <h2 id="console-title" class="card__title">Select Your Date of Birth</h2>
+      <p class="card__hint">Your three tracks are chosen by birth month. We never show or share your full date.</p>
+
+      <form id="dob-form" class="dob" novalidate>
+        <div class="dob__grid">
+          <div class="field">
+            <label for="dob-day">Day</label>
+            <select id="dob-day" name="day" required autocomplete="bday-day"></select>
+          </div>
+          <div class="field">
+            <label for="dob-month">Month</label>
+            <select id="dob-month" name="month" required autocomplete="bday-month"></select>
+          </div>
+          <div class="field">
+            <label for="dob-year">Year</label>
+            <select id="dob-year" name="year" required autocomplete="bday-year"></select>
+          </div>
+        </div>
+        <p class="field__error" id="dob-error" role="alert" hidden></p>
+
+        <p class="readout" id="readout" aria-live="polite">
+          <span class="readout__idle">Choose day, month and year to detect your resonance.</span>
+        </p>
+
+        <button type="submit" id="synth-btn" class="btn btn--gold" disabled>
+          <span class="btn__shimmer" aria-hidden="true"></span>
+          <span>Synthesize My Free Birth-Date Audio →</span>
+        </button>
+      </form>
+    </section>
+
+    <!-- ========== PROCESSING ========== -->
+    <section class="card processing" id="processing" hidden aria-labelledby="processing-title" aria-live="polite">
+      <div class="processing__head">
+        <h2 id="processing-title" class="card__title">Synthesizing your Birth-Month Sound</h2>
+        <button type="button" id="mute-btn" class="icon-btn" aria-pressed="false" aria-label="Mute ambient preview">
+          <svg class="icon-btn__on" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4zm12.5 3a4.5 4.5 0 0 0-2.5-4v8a4.5 4.5 0 0 0 2.5-4zM14 3.2v2.1a7 7 0 0 1 0 13.4v2.1a9 9 0 0 0 0-17.6z"/></svg>
+          <svg class="icon-btn__off" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4zm12 3 3-3-1.4-1.4-3 3-3-3L10.2 9l3 3-3 3 1.4 1.4 3-3 3 3L19 15l-3-3z"/></svg>
+        </button>
+      </div>
+      <p class="processing__note">Ambient preview only — your studio tracks arrive on WhatsApp.</p>
+
+      <canvas id="wave" class="wave" width="400" height="90" aria-hidden="true"></canvas>
+
+      <p class="hz" aria-hidden="true"><span id="hz-value">136.1</span><span class="hz__unit"> Hz</span></p>
+      <!-- The counter above is a visual effect driven by elapsed time, not a measurement. -->
+
+      <ol class="nodes" id="nodes">
+        <li class="node" data-node="0"><span class="node__dot" aria-hidden="true"></span><span class="node__text">Matching your birth-month sound profile...</span></li>
+        <li class="node" data-node="1"><span class="node__dot" aria-hidden="true"></span><span class="node__text">Preparing your Vedic-inspired acoustic frequency...</span></li>
+        <li class="node" data-node="2"><span class="node__dot" aria-hidden="true"></span><span class="node__text">Layering Tanpura drone &amp; Singing Bowl-inspired harmonics...</span></li>
+        <li class="node" data-node="3"><span class="node__dot" aria-hidden="true"></span><span class="node__text">Your 3 Free Birth-Month Sound Tracks Are Ready!</span></li>
+        <span class="nodes__beam" id="beam" aria-hidden="true"></span>
+      </ol>
+    </section>
+
+    <!-- ========== RESULT ========== -->
+    <section class="card result" id="result" hidden aria-labelledby="result-title" tabindex="-1">
+      <p class="result__eyebrow">Your free kit is prepared</p>
+      <h2 id="result-title" class="result__kit">KarmicWaves_<span id="kit-month">Month</span>_FreeKit</h2>
+      <p class="result__meta" id="result-meta"></p>
+
+      <ol class="result__tracks" id="result-tracks"></ol>
+
+      <p class="result__note">
+        <span aria-hidden="true">◈ </span>Your studio-quality audio files are delivered on WhatsApp. Enter the number you use on WhatsApp.
+      </p>
+
+      <form id="lead-form" class="lead" novalidate>
+        <label for="phone" class="lead__label">WhatsApp number</label>
+        <div class="phone">
+          <span class="phone__cc" aria-hidden="true">🇮🇳 +91</span>
+          <input id="phone" name="phone" type="tel" inputmode="numeric" autocomplete="tel-national"
+                 maxlength="10" pattern="[6-9][0-9]{9}" placeholder="10-digit mobile number"
+                 aria-describedby="phone-help phone-error" required>
+        </div>
+        <p id="phone-help" class="lead__help">Indian mobile numbers only. We send your three tracks to this number.</p>
+        <p class="field__error" id="phone-error" role="alert" hidden></p>
+
+        <button type="submit" id="send-btn" class="btn btn--wa">
+          <svg viewBox="0 0 24 24" aria-hidden="true" class="btn__icon"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 12 12 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg>
+          <span id="send-label">Send My 3 Free Audio Tracks on WhatsApp</span>
+        </button>
+        <p class="lead__status" id="lead-status" role="status" aria-live="polite"></p>
+        <p class="lead__consent">By tapping above, you opt in to receive your customized birth-date audio files on WhatsApp. 100% Free &amp; Private.</p>
+      </form>
+    </section>
+
+    <!-- ========== REVIEWS ========== -->
+    <section class="reviews" id="reviews" hidden aria-labelledby="reviews-title">
+      <h2 id="reviews-title" class="section__title">How People Experience Their Birth-Month Sound at 11:00 PM</h2>
+      <div class="reviews__list" id="reviews-list"></div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+      <nav class="footer__links" aria-label="Legal">
+        <button type="button" class="link-btn" data-modal="privacy">Privacy</button>
+        <span aria-hidden="true">·</span>
+        <button type="button" class="link-btn" data-modal="terms">Terms</button>
+        <span aria-hidden="true">·</span>
+        <button type="button" class="link-btn" data-modal="contact">Contact</button>
+      </nav>
+      <p class="footer__disclaimer">Disclaimer: Karmic Waves synthesizes personalized acoustic soundscapes inspired by traditional Vedic Naad principles for meditation, relaxation, and mindfulness. This tool does not provide medical, psychological, or financial advice, and results vary by individual practice.</p>
+      <p class="footer__copy">© <span id="year"></span> Karmic Waves</p>
+    </footer>
+  </main>
+
+  <!-- ========== MODALS ========== -->
+  <div class="modal" id="modal" hidden>
+    <div class="modal__backdrop" data-close></div>
+    <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="modal-title" tabindex="-1">
+      <button type="button" class="modal__close" data-close aria-label="Close">×</button>
+      <h2 id="modal-title" class="modal__title"></h2>
+      <div class="modal__body" id="modal-body"></div>
+    </div>
+  </div>
+
+  <template id="tpl-privacy">
+    <p class="draft">DRAFT — requires legal review before publishing. Items marked [CLIENT TO CONFIRM] need the business's answer.</p>
+    <h3>1. Who we are</h3>
+    <p>Karmic Waves ("we") is operated by {{entityName}}. Contact: {{contactEmail}}.</p>
+    <h3>2. What we collect and why</h3>
+    <ul>
+      <li><strong>Date of birth</strong> — used only to determine your birth month, which selects the three free tracks you receive. We keep the full date you entered so we can answer "which tracks did I ask for?" support questions.</li>
+      <li><strong>WhatsApp number</strong> — used to send the three tracks and related messages on WhatsApp.</li>
+      <li><strong>Consent record</strong> — a yes/no flag with timestamp and the version of the consent text you saw.</li>
+      <li><strong>Campaign attribution</strong> — UTM parameters, Facebook click ID (fbclid) and referrer from the link you arrived on, to know which advert brought you here.</li>
+      <li><strong>Technical data</strong> — a hashed IP address and browser user-agent, kept for abuse prevention and rate limiting.</li>
+    </ul>
+    <p>We do not collect your name, email, location, contacts or payment details on this page.</p>
+    <h3>3. Legal basis (Digital Personal Data Protection Act, 2023)</h3>
+    <p>We process this data on the basis of your consent, given when you tap "Send My 3 Free Audio Tracks on WhatsApp". You may withdraw consent at any time by messaging STOP on WhatsApp or writing to {{contactEmail}}.</p>
+    <h3>4. Meta Pixel and advertising</h3>
+    <p>If enabled, this page loads the Meta Pixel to measure advertising results. When your lead is accepted we send Meta a "Lead" event containing a random event ID and the standard Pixel browser data. We never send your date of birth or phone number to Meta from this page. [CLIENT TO CONFIRM: whether hashed phone is shared via Conversions API for ad matching.]</p>
+    <h3>5. Where data is stored and for how long</h3>
+    <p>Lead records are stored in {{storageProvider}} and retained for {{retentionDays}}, after which they are deleted or anonymised. WhatsApp messages are processed by Meta Platforms under WhatsApp's own terms.</p>
+    <h3>6. Your rights</h3>
+    <p>You can ask for access to, correction of, or erasure of your data, or nominate another person to exercise these rights, by contacting {{contactEmail}}. Grievance officer: {{grievanceOfficer}}. We respond within the time required by law.</p>
+    <h3>7. Children</h3>
+    <p>This tool is intended for adults. The birth-year selector therefore stops at the year in which a visitor turns 18.</p>
+    <h3>8. Changes</h3>
+    <p>We will update this notice here when our practices change. Last updated: November 2026.</p>
+  </template>
+
+  <template id="tpl-terms">
+    <p class="draft">DRAFT — requires legal review before publishing.</p>
+    <h3>1. The service</h3>
+    <p>Karmic Waves provides three free audio tracks selected by your birth month, delivered on WhatsApp, for relaxation, meditation and mindfulness. The selection is based on a traditional-inspired creative mapping of months to elements and tunings. It is not an astronomical, astrological, medical or scientifically validated system.</p>
+    <h3>2. No professional advice</h3>
+    <p>Nothing on this page or in the audio constitutes medical, psychological, financial or legal advice. Do not use the tracks while driving or operating machinery. If you have a hearing, cardiac, neurological or mental-health condition, consult a professional before using sound-based relaxation content.</p>
+    <h3>3. Free of charge</h3>
+    <p>The three Birth-Month tracks on this page are free. Any other products or services are offered separately, with their own terms, inside WhatsApp. [CLIENT TO CONFIRM: reference to paid offers and their terms.]</p>
+    <h3>4. Messaging</h3>
+    <p>By opting in you agree to receive your tracks and related messages from our business WhatsApp number. Reply STOP to opt out at any time. Delivery depends on WhatsApp's service availability and message limits.</p>
+    <h3>5. Intellectual property</h3>
+    <p>The audio tracks are licensed to you for personal, non-commercial listening. You may not resell, redistribute or publicly perform them. [CLIENT TO CONFIRM: ownership of compositions and samples.]</p>
+    <h3>6. Fair use of the tool</h3>
+    <p>Automated, bulk or abusive use of this page is prohibited. We rate-limit requests and may decline to deliver to numbers that abuse the service.</p>
+    <h3>7. Limitation of liability</h3>
+    <p>To the extent permitted by law, we are not liable for indirect losses arising from use of the free tracks or this page. Results of any relaxation practice vary by individual.</p>
+    <h3>8. Governing law</h3>
+    <p>These terms are governed by the laws of India. Jurisdiction: [CLIENT TO CONFIRM]. Entity: {{entityName}}.</p>
+  </template>
+
+  <template id="tpl-contact">
+    <p>Questions about your free tracks, your data, or opting out:</p>
+    <ul>
+      <li><strong>WhatsApp:</strong> <span data-business-number>{{businessNumber}}</span></li>
+      <li><strong>Email:</strong> {{contactEmail}}</li>
+      <li><strong>Postal address:</strong> {{address}}</li>
+      <li><strong>Grievance officer:</strong> {{grievanceOfficer}}</li>
+    </ul>
+    <p>Support hours: [CLIENT TO CONFIRM]. We aim to respond within [CLIENT TO CONFIRM] working days.</p>
+  </template>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+  <!-- build:js -->
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+  <!-- /build:js -->
+</body>
+</html>

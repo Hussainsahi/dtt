@@ -1,0 +1,1186 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Karmic Waves — Your Birth Date Has a Sound. Hear Yours, Free.</title>
+  <meta name="description" content="Select your Date of Birth and explore your 3 free Birth-Month Sound Tracks, inspired by traditional Vedic Naad practice. Delivered on WhatsApp.">
+  <link rel="canonical" href="https://karmicwaves.example.com">
+  <meta name="theme-color" content="#0A0E17">
+  <meta name="robots" content="index,follow">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Karmic Waves">
+  <meta property="og:title" content="Karmic Waves — Your Birth Date Has a Sound. Hear Yours, Free.">
+  <meta property="og:description" content="Select your Date of Birth and explore your 3 free Birth-Month Sound Tracks, inspired by traditional Vedic Naad practice. Delivered on WhatsApp.">
+  <meta property="og:url" content="https://karmicwaves.example.com">
+  <meta property="og:image" content="https://karmicwaves.example.com/og-image.jpg">
+  <meta property="og:locale" content="en_IN">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Karmic Waves — Your Birth Date Has a Sound. Hear Yours, Free.">
+  <meta name="twitter:description" content="Select your Date of Birth and explore your 3 free Birth-Month Sound Tracks, inspired by traditional Vedic Naad practice. Delivered on WhatsApp.">
+  <meta name="twitter:image" content="https://karmicwaves.example.com/og-image.jpg">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%230A0E17'/%3E%3Ccircle cx='32' cy='32' r='22' fill='none' stroke='%23D4AF37' stroke-width='2'/%3E%3Ccircle cx='32' cy='32' r='11' fill='none' stroke='%2300F2FE' stroke-width='2'/%3E%3Ccircle cx='32' cy='32' r='3' fill='%23F3E5AB'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+/* Karmic Waves — styles. Mobile-first, max 460px column. */
+:root {
+  --bg-outer: #0A0E17;
+  --bg-inner: #141E30;
+  --gold: #D4AF37;
+  --gold-light: #F3E5AB;
+  --aqua: #00F2FE;
+  --wa: #10B981;
+  --text: #F8FAFC;
+  --muted: #94A3B8;
+  --glass: rgba(20, 30, 48, 0.62);
+  --glass-border: rgba(212, 175, 55, 0.35);
+  --radius: 20px;
+  --font-display: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --col: 460px;
+  --ease: cubic-bezier(.22,.61,.36,1);
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+body {
+  margin: 0;
+  min-height: 100dvh;
+  color: var(--text);
+  background: var(--bg-outer);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+img, svg, canvas { display: block; max-width: 100%; }
+button, input, select { font: inherit; color: inherit; }
+button { cursor: pointer; }
+[hidden] { display: none !important; }
+
+/* ----- a11y ----- */
+.skip-link {
+  position: absolute; left: 12px; top: -60px; z-index: 100;
+  padding: 10px 14px; border-radius: 10px;
+  background: var(--gold); color: #0A0E17; font-weight: 600; text-decoration: none;
+  transition: top .2s;
+}
+.skip-link:focus { top: 12px; }
+:focus-visible { outline: 2px solid var(--aqua); outline-offset: 3px; border-radius: 6px; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* ----- cosmos background ----- */
+.cosmos { position: fixed; inset: 0; z-index: -1; overflow: hidden; pointer-events: none;
+  background:
+    radial-gradient(ellipse 120% 60% at 50% -10%, #1B2A47 0%, transparent 60%),
+    radial-gradient(ellipse 90% 50% at 50% 110%, #101A2B 0%, transparent 60%),
+    var(--bg-outer);
+}
+.cosmos__glow { position: absolute; border-radius: 50%; filter: blur(60px); opacity: .35; }
+.cosmos__glow--gold { width: 60vmin; height: 60vmin; left: -20vmin; top: 10vh; background: var(--gold); opacity: .14; }
+.cosmos__glow--aqua { width: 70vmin; height: 70vmin; right: -25vmin; top: 45vh; background: var(--aqua); opacity: .10; }
+.cosmos__stars { position: absolute; inset: 0; opacity: .55;
+  background-image:
+    radial-gradient(1px 1px at 12% 18%, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 78% 9%, #fff 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 35% 42%, var(--gold-light) 50%, transparent 51%),
+    radial-gradient(1px 1px at 88% 56%, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 22% 74%, var(--aqua) 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 62% 83%, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 50% 30%, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 8% 92%, var(--gold-light) 50%, transparent 51%),
+    radial-gradient(1px 1px at 93% 88%, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 68% 62%, #fff 50%, transparent 51%);
+  background-size: 100% 100%;
+}
+
+/* ----- activity bar ----- */
+.activity {
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  padding: 9px 16px; font-size: 12.5px; color: var(--muted);
+  background: rgba(10, 14, 23, .75); border-bottom: 1px solid rgba(0, 242, 254, .15);
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  text-align: center;
+}
+.activity__pulse { width: 8px; height: 8px; border-radius: 50%; background: var(--aqua); flex: none;
+  box-shadow: 0 0 0 0 rgba(0, 242, 254, .7); animation: pulse 1.8s ease-out infinite; }
+@keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(0,242,254,.7); } 100% { box-shadow: 0 0 0 10px rgba(0,242,254,0); } }
+
+/* ----- layout ----- */
+.page { width: 100%; max-width: var(--col); margin: 0 auto; padding: 24px 16px 40px; display: grid; gap: 18px; }
+@media (min-width: 768px) { .page { padding-top: 40px; gap: 22px; } }
+
+.card {
+  position: relative;
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
+  padding: 22px 18px;
+  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 0 0 1px rgba(255,255,255,.02) inset, 0 20px 50px -30px rgba(0,0,0,.8), 0 0 40px -20px rgba(0,242,254,.35);
+}
+.card__title { font-family: var(--font-display); font-weight: 600; font-size: 24px; line-height: 1.15; margin: 0 0 6px; color: var(--gold-light); }
+.card__hint { margin: 0 0 16px; font-size: 13px; color: var(--muted); }
+.section__title { font-family: var(--font-display); font-weight: 600; font-size: 22px; line-height: 1.2; margin: 0 0 14px; color: var(--gold-light); text-align: center; }
+
+/* ----- hero ----- */
+.hero { text-align: center; padding: 6px 4px 0; }
+.badge {
+  display: inline-block; margin: 0 0 14px; padding: 7px 12px; border-radius: 999px;
+  font-size: 10.5px; letter-spacing: .12em; font-weight: 600; color: var(--gold-light);
+  border: 1px solid var(--glass-border); background: rgba(212,175,55,.08);
+}
+.hero__title { font-family: var(--font-display); font-weight: 600; font-size: clamp(32px, 9vw, 42px); line-height: 1.08; margin: 0 0 12px; }
+.hero__accent { color: var(--gold); text-shadow: 0 0 24px rgba(212,175,55,.35); }
+.hero__sub { margin: 0 auto 18px; max-width: 40ch; font-size: 15px; color: var(--muted); }
+.tracks { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; text-align: left; }
+.tracks__item {
+  display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: 14px;
+  background: rgba(20,30,48,.5); border: 1px solid rgba(0,242,254,.16); font-size: 14px; font-weight: 600;
+}
+.tracks__icon { color: var(--aqua); width: 22px; text-align: center; }
+.trust { list-style: none; margin: 16px 0 0; padding: 0; display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; font-size: 12px; color: var(--muted); }
+.trust strong { color: var(--gold-light); font-size: 15px; display: block; }
+
+/* ----- console ----- */
+.console { overflow: hidden; }
+.mandala { width: 150px; height: 150px; margin: -6px auto 8px; position: relative; }
+.mandala__svg { width: 100%; height: 100%; transition: transform .9s var(--ease); will-change: transform; filter: drop-shadow(0 0 14px rgba(0,242,254,.35)); }
+.mandala__ring { transform-origin: 100px 100px; }
+
+.dob__grid { display: grid; grid-template-columns: 1fr 1.4fr 1fr; gap: 10px; }
+.field { display: grid; gap: 6px; }
+.field label { font-size: 11.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+select, input[type="tel"] {
+  width: 100%; min-height: 48px; padding: 10px 12px; border-radius: 12px;
+  background: rgba(10,14,23,.7); border: 1px solid rgba(212,175,55,.3); color: var(--text);
+  appearance: none; -webkit-appearance: none;
+}
+select {
+  background-image: linear-gradient(45deg, transparent 50%, var(--gold) 50%), linear-gradient(135deg, var(--gold) 50%, transparent 50%);
+  background-position: calc(100% - 16px) 50%, calc(100% - 11px) 50%;
+  background-size: 5px 5px, 5px 5px; background-repeat: no-repeat; padding-right: 30px;
+}
+select:disabled { opacity: .55; }
+select:focus, input:focus { border-color: var(--aqua); box-shadow: 0 0 0 3px rgba(0,242,254,.18); outline: none; }
+.field__error { margin: 8px 0 0; font-size: 13px; color: #FCA5A5; }
+.field__error:not([hidden]) { display: block; }
+
+.readout {
+  margin: 14px 0; padding: 12px 14px; border-radius: 14px; text-align: center; font-size: 13.5px; min-height: 48px;
+  background: rgba(0,242,254,.06); border: 1px dashed rgba(0,242,254,.3); color: var(--aqua);
+}
+.readout__idle { color: var(--muted); }
+.readout strong { color: var(--gold-light); font-weight: 600; }
+
+/* ----- buttons ----- */
+.btn {
+  position: relative; display: flex; align-items: center; justify-content: center; gap: 10px;
+  width: 100%; min-height: 54px; padding: 14px 18px; border-radius: 999px; border: 0;
+  font-weight: 600; font-size: clamp(14px, 3.9vw, 15.5px); white-space: nowrap; overflow: hidden; transition: transform .15s, filter .15s, opacity .2s;
+}
+.btn:active { transform: scale(.985); }
+.btn:disabled { opacity: .5; cursor: not-allowed; }
+.btn--gold { color: #0A0E17; background: linear-gradient(135deg, var(--gold-light), var(--gold) 55%, #B8912A); box-shadow: 0 10px 30px -12px rgba(212,175,55,.8); }
+.btn__shimmer { position: absolute; top: 0; bottom: 0; left: -40%; width: 40%; transform: skewX(-20deg);
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.6), transparent); animation: shimmer 3s linear infinite; }
+@keyframes shimmer { 0%, 70% { left: -40%; } 100% { left: 140%; } }
+.btn--wa { color: #fff; background: linear-gradient(135deg, #34D399, var(--wa)); box-shadow: 0 10px 30px -12px rgba(16,185,129,.9); }
+.btn__icon { width: 22px; height: 22px; fill: currentColor; flex: none; }
+.btn.is-busy { pointer-events: none; opacity: .8; }
+
+.icon-btn { width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--glass-border); background: rgba(10,14,23,.6); display: grid; place-items: center; }
+.icon-btn svg { width: 20px; height: 20px; fill: var(--gold-light); }
+.icon-btn .icon-btn__off { display: none; }
+.icon-btn[aria-pressed="true"] .icon-btn__on { display: none; }
+.icon-btn[aria-pressed="true"] .icon-btn__off { display: block; }
+
+/* ----- processing ----- */
+.processing__head { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.processing__head .card__title { margin: 0; font-size: 21px; }
+.processing__note { margin: 4px 0 12px; font-size: 12.5px; color: var(--muted); }
+.wave { width: 100%; height: 90px; border-radius: 14px; background: rgba(10,14,23,.5); border: 1px solid rgba(0,242,254,.15); }
+.hz { margin: 14px 0 6px; text-align: center; font-family: var(--font-body); font-weight: 600; font-size: 40px; letter-spacing: -.01em; line-height: 1; color: var(--aqua);
+  text-shadow: 0 0 18px rgba(0,242,254,.6), 0 0 40px rgba(0,242,254,.3); font-variant-numeric: tabular-nums; }
+.hz__unit { font-size: 18px; color: var(--muted); font-family: var(--font-body); font-weight: 400; }
+
+.nodes { position: relative; list-style: none; margin: 14px 0 0; padding: 0 0 0 34px; display: grid; gap: 14px; }
+.nodes__beam { position: absolute; left: 11px; top: 8px; width: 2px; height: calc(100% - 16px); border-radius: 2px; background: rgba(255,255,255,.08); overflow: hidden; }
+.nodes__beam::after { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 100%; transform: translateY(-100%);
+  background: linear-gradient(180deg, var(--gold) 0%, var(--aqua) 100%); box-shadow: 0 0 12px var(--aqua); }
+.nodes.is-running .nodes__beam::after { animation: beam 6.5s linear forwards; }
+@keyframes beam { from { transform: translateY(-100%); } to { transform: translateY(0); } }
+.node { position: relative; font-size: 14px; color: var(--muted); transition: color .3s; }
+.node__dot { position: absolute; left: -31px; top: 3px; width: 16px; height: 16px; border-radius: 50%;
+  border: 2px solid rgba(255,255,255,.2); background: var(--bg-outer); display: grid; place-items: center; transition: all .3s; }
+.node.is-active { color: var(--text); }
+.node.is-active .node__dot { border-color: var(--aqua); box-shadow: 0 0 10px var(--aqua); }
+.node.is-done { color: var(--gold-light); }
+.node.is-done .node__dot { border-color: var(--gold); background: var(--gold); box-shadow: 0 0 10px rgba(212,175,55,.6); }
+.node.is-done .node__dot::after { content: ""; width: 5px; height: 9px; border: solid #0A0E17; border-width: 0 2px 2px 0; transform: translateY(-1px) rotate(45deg); }
+
+/* ----- result ----- */
+.result { border-color: rgba(212,175,55,.6); box-shadow: 0 0 0 1px rgba(212,175,55,.15) inset, 0 20px 50px -30px rgba(0,0,0,.8), 0 0 50px -18px rgba(212,175,55,.5); }
+.result__eyebrow { margin: 0 0 4px; font-size: 11.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--aqua); font-weight: 600; }
+.result__kit { margin: 0 0 4px; font-family: var(--font-body); font-weight: 600; font-size: 19px; letter-spacing: .01em; color: var(--gold-light); word-break: break-word; }
+.result__meta { margin: 0 0 14px; font-size: 13px; color: var(--muted); }
+.result__tracks { list-style: none; margin: 0 0 14px; padding: 0; display: grid; gap: 8px; counter-reset: t; }
+.result__track { display: flex; align-items: center; gap: 12px; padding: 11px 14px; border-radius: 14px; background: rgba(10,14,23,.55); border: 1px solid rgba(212,175,55,.22); }
+.result__track::before { counter-increment: t; content: counter(t); width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; flex: none;
+  font-size: 13px; font-weight: 600; color: #0A0E17; background: linear-gradient(135deg, var(--gold-light), var(--gold)); }
+.result__track-title { font-weight: 600; font-size: 14.5px; }
+.result__track-meta { font-size: 12px; color: var(--muted); }
+.result__note { margin: 0 0 16px; padding: 12px 14px; border-radius: 14px; font-size: 13.5px; color: var(--aqua); background: rgba(0,242,254,.06); border: 1px solid rgba(0,242,254,.25); }
+
+.lead__label { display: block; font-size: 11.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); font-weight: 600; margin-bottom: 6px; }
+.phone { display: flex; align-items: stretch; border-radius: 12px; overflow: hidden; border: 1px solid rgba(212,175,55,.3); background: rgba(10,14,23,.7); }
+.phone:focus-within { border-color: var(--aqua); box-shadow: 0 0 0 3px rgba(0,242,254,.18); }
+.phone__cc { display: flex; align-items: center; padding: 0 12px; border-right: 1px solid rgba(212,175,55,.25); color: var(--gold-light); font-weight: 600; white-space: nowrap; }
+.phone input { border: 0; border-radius: 0; background: transparent; letter-spacing: .06em; }
+.phone input:focus { box-shadow: none; }
+.lead__help { margin: 8px 0 0; font-size: 12px; color: var(--muted); }
+.lead .btn { margin-top: 14px; }
+.lead__status { margin: 10px 0 0; font-size: 13px; color: var(--aqua); min-height: 1em; }
+.lead__status.is-error { color: #FCA5A5; }
+.lead__consent { margin: 10px 0 0; font-size: 12px; color: var(--muted); text-align: center; }
+
+/* ----- reviews ----- */
+.reviews__list { display: grid; gap: 10px; }
+.review { padding: 12px 14px; border-radius: 16px 16px 16px 4px; background: #1F2C3D; border: 1px solid rgba(255,255,255,.06); font-size: 14px; }
+.review__head { display: flex; justify-content: space-between; gap: 10px; font-size: 12px; color: var(--muted); margin-bottom: 4px; }
+.review__name { color: var(--gold-light); font-weight: 600; }
+.review__text { margin: 0; }
+.review__time { display: block; text-align: right; font-size: 11px; color: var(--muted); margin-top: 6px; }
+
+/* ----- footer ----- */
+.footer { text-align: center; padding: 10px 4px 0; color: var(--muted); font-size: 12.5px; }
+.footer__links { display: flex; justify-content: center; gap: 10px; margin-bottom: 14px; }
+.link-btn { background: none; border: 0; padding: 6px 4px; color: var(--gold-light); text-decoration: underline; text-underline-offset: 3px; }
+.footer__disclaimer { margin: 0 0 10px; font-size: 12px; line-height: 1.5; }
+.footer__copy { margin: 0; font-size: 12px; }
+
+/* ----- modal ----- */
+.modal { position: fixed; inset: 0; z-index: 50; display: grid; place-items: end center; }
+@media (min-width: 768px) { .modal { place-items: center; } }
+.modal__backdrop { position: absolute; inset: 0; background: rgba(5,8,14,.75); backdrop-filter: blur(4px); }
+.modal__dialog {
+  position: relative; width: 100%; max-width: 560px; max-height: 88dvh; overflow: auto;
+  background: var(--bg-inner); border: 1px solid var(--glass-border); border-radius: 20px 20px 0 0; padding: 22px 20px 30px;
+  box-shadow: 0 -20px 60px -20px rgba(0,0,0,.9);
+}
+@media (min-width: 768px) { .modal__dialog { border-radius: 20px; } }
+.modal__close { position: absolute; top: 10px; right: 10px; width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--glass-border); background: rgba(10,14,23,.6); font-size: 22px; line-height: 1; }
+.modal__title { font-family: var(--font-display); font-weight: 600; font-size: 26px; margin: 0 0 10px; color: var(--gold-light); }
+.modal__body { font-size: 14px; color: #CBD5E1; }
+.modal__body h3 { font-size: 15px; color: var(--gold-light); margin: 16px 0 6px; }
+.modal__body p, .modal__body ul { margin: 0 0 8px; }
+.modal__body li { margin-bottom: 4px; }
+.draft { padding: 8px 10px; border-radius: 10px; background: rgba(212,175,55,.1); border: 1px solid var(--glass-border); color: var(--gold-light); font-size: 12.5px; }
+body.modal-open { overflow: hidden; }
+
+/* ----- toast ----- */
+.toast { position: fixed; left: 50%; bottom: 20px; transform: translateX(-50%); z-index: 60; max-width: calc(100% - 32px);
+  padding: 12px 16px; border-radius: 12px; background: #1F2C3D; border: 1px solid var(--glass-border); color: var(--text); font-size: 14px; box-shadow: 0 10px 30px rgba(0,0,0,.5); }
+
+/* ----- reduced motion ----- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .activity__pulse, .btn__shimmer { animation: none; }
+  .mandala__svg { transition: none; }
+  .nodes.is-running .nodes__beam::after { animation: none; transform: translateY(0); opacity: .5; }
+  .node, .node__dot { transition: none; }
+}
+
+</style>
+</head>
+<body>
+  <a class="skip-link" href="#dob-console">Skip to the birth-date tool</a>
+
+  <div class="cosmos" aria-hidden="true">
+    <div class="cosmos__glow cosmos__glow--gold"></div>
+    <div class="cosmos__glow cosmos__glow--aqua"></div>
+    <div class="cosmos__stars"></div>
+  </div>
+
+  <div class="activity" role="status" aria-live="polite">
+    <span class="activity__pulse" aria-hidden="true"></span>
+    <span>People are exploring their Birth-Month Sound Frequency right now.</span>
+  </div>
+
+  <main id="main" class="page">
+
+    <!-- ========== HERO ========== -->
+    <header class="hero">
+      <p class="badge">ANCIENT VEDIC NAAD-VIGYAN • 100% FREE BIRTH-SOUND TOOL</p>
+      <h1 class="hero__title">Your Birth Date Has a Sound. <span class="hero__accent">Hear Yours — Free.</span></h1>
+      <p class="hero__sub">Every birth month carries its own vibration in traditional Vedic sound practice. Select your Date of Birth to explore your 3 Free Birth-Month Sound Tracks.</p>
+
+      <ul class="tracks" aria-label="The three free tracks">
+        <li class="tracks__item"><span class="tracks__icon" aria-hidden="true">☀</span><span>Morning Aura Igniter</span></li>
+        <li class="tracks__item"><span class="tracks__icon" aria-hidden="true">◎</span><span>Daytime Focus Shield</span></li>
+        <li class="tracks__item"><span class="tracks__icon" aria-hidden="true">☾</span><span>11:00 PM Deep Night Ritual</span></li>
+      </ul>
+
+      <ul class="trust" id="trust-strip" hidden aria-label="Trust data"></ul>
+    </header>
+
+    <!-- ========== DOB CONSOLE ========== -->
+    <section class="card console" id="dob-console" aria-labelledby="console-title">
+      <div class="mandala" aria-hidden="true">
+        <svg id="mandala" class="mandala__svg" viewBox="0 0 200 200" focusable="false">
+          <defs>
+            <radialGradient id="mg" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#00F2FE" stop-opacity=".35"/>
+              <stop offset="100%" stop-color="#00F2FE" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <circle cx="100" cy="100" r="96" fill="url(#mg)"/>
+          <g class="mandala__ring" fill="none" stroke="#D4AF37" stroke-width="1">
+            <circle cx="100" cy="100" r="88"/>
+            <circle cx="100" cy="100" r="62"/>
+            <circle cx="100" cy="100" r="34"/>
+            <path d="M100 12 L176 56 L176 144 L100 188 L24 144 L24 56 Z"/>
+            <path d="M100 38 L153.7 69 L153.7 131 L100 162 L46.3 131 L46.3 69 Z" stroke="#00F2FE" stroke-opacity=".8"/>
+            <path d="M100 4 L121 79 L196 100 L121 121 L100 196 L79 121 L4 100 L79 79 Z" stroke-opacity=".55"/>
+            <path d="M100 52 L148 100 L100 148 L52 100 Z" stroke="#F3E5AB"/>
+          </g>
+          <circle cx="100" cy="100" r="4" fill="#F3E5AB"/>
+        </svg>
+      </div>
+
+      <h2 id="console-title" class="card__title">Select Your Date of Birth</h2>
+      <p class="card__hint">Your three tracks are chosen by birth month. We never show or share your full date.</p>
+
+      <form id="dob-form" class="dob" novalidate>
+        <div class="dob__grid">
+          <div class="field">
+            <label for="dob-day">Day</label>
+            <select id="dob-day" name="day" required autocomplete="bday-day"></select>
+          </div>
+          <div class="field">
+            <label for="dob-month">Month</label>
+            <select id="dob-month" name="month" required autocomplete="bday-month"></select>
+          </div>
+          <div class="field">
+            <label for="dob-year">Year</label>
+            <select id="dob-year" name="year" required autocomplete="bday-year"></select>
+          </div>
+        </div>
+        <p class="field__error" id="dob-error" role="alert" hidden></p>
+
+        <p class="readout" id="readout" aria-live="polite">
+          <span class="readout__idle">Choose day, month and year to detect your resonance.</span>
+        </p>
+
+        <button type="submit" id="synth-btn" class="btn btn--gold" disabled>
+          <span class="btn__shimmer" aria-hidden="true"></span>
+          <span>Synthesize My Free Birth-Date Audio →</span>
+        </button>
+      </form>
+    </section>
+
+    <!-- ========== PROCESSING ========== -->
+    <section class="card processing" id="processing" hidden aria-labelledby="processing-title" aria-live="polite">
+      <div class="processing__head">
+        <h2 id="processing-title" class="card__title">Synthesizing your Birth-Month Sound</h2>
+        <button type="button" id="mute-btn" class="icon-btn" aria-pressed="false" aria-label="Mute ambient preview">
+          <svg class="icon-btn__on" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4zm12.5 3a4.5 4.5 0 0 0-2.5-4v8a4.5 4.5 0 0 0 2.5-4zM14 3.2v2.1a7 7 0 0 1 0 13.4v2.1a9 9 0 0 0 0-17.6z"/></svg>
+          <svg class="icon-btn__off" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4zm12 3 3-3-1.4-1.4-3 3-3-3L10.2 9l3 3-3 3 1.4 1.4 3-3 3 3L19 15l-3-3z"/></svg>
+        </button>
+      </div>
+      <p class="processing__note">Ambient preview only — your studio tracks arrive on WhatsApp.</p>
+
+      <canvas id="wave" class="wave" width="400" height="90" aria-hidden="true"></canvas>
+
+      <p class="hz" aria-hidden="true"><span id="hz-value">136.1</span><span class="hz__unit"> Hz</span></p>
+      <!-- The counter above is a visual effect driven by elapsed time, not a measurement. -->
+
+      <ol class="nodes" id="nodes">
+        <li class="node" data-node="0"><span class="node__dot" aria-hidden="true"></span><span class="node__text">Matching your birth-month sound profile...</span></li>
+        <li class="node" data-node="1"><span class="node__dot" aria-hidden="true"></span><span class="node__text">Preparing your Vedic-inspired acoustic frequency...</span></li>
+        <li class="node" data-node="2"><span class="node__dot" aria-hidden="true"></span><span class="node__text">Layering Tanpura drone &amp; Singing Bowl-inspired harmonics...</span></li>
+        <li class="node" data-node="3"><span class="node__dot" aria-hidden="true"></span><span class="node__text">Your 3 Free Birth-Month Sound Tracks Are Ready!</span></li>
+        <span class="nodes__beam" id="beam" aria-hidden="true"></span>
+      </ol>
+    </section>
+
+    <!-- ========== RESULT ========== -->
+    <section class="card result" id="result" hidden aria-labelledby="result-title" tabindex="-1">
+      <p class="result__eyebrow">Your free kit is prepared</p>
+      <h2 id="result-title" class="result__kit">KarmicWaves_<span id="kit-month">Month</span>_FreeKit</h2>
+      <p class="result__meta" id="result-meta"></p>
+
+      <ol class="result__tracks" id="result-tracks"></ol>
+
+      <p class="result__note">
+        <span aria-hidden="true">◈ </span>Your studio-quality audio files are delivered on WhatsApp. Enter the number you use on WhatsApp.
+      </p>
+
+      <form id="lead-form" class="lead" novalidate>
+        <label for="phone" class="lead__label">WhatsApp number</label>
+        <div class="phone">
+          <span class="phone__cc" aria-hidden="true">🇮🇳 +91</span>
+          <input id="phone" name="phone" type="tel" inputmode="numeric" autocomplete="tel-national"
+                 maxlength="10" pattern="[6-9][0-9]{9}" placeholder="10-digit mobile number"
+                 aria-describedby="phone-help phone-error" required>
+        </div>
+        <p id="phone-help" class="lead__help">Indian mobile numbers only. We send your three tracks to this number.</p>
+        <p class="field__error" id="phone-error" role="alert" hidden></p>
+
+        <button type="submit" id="send-btn" class="btn btn--wa">
+          <svg viewBox="0 0 24 24" aria-hidden="true" class="btn__icon"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 12 12 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg>
+          <span id="send-label">Send My 3 Free Audio Tracks on WhatsApp</span>
+        </button>
+        <p class="lead__status" id="lead-status" role="status" aria-live="polite"></p>
+        <p class="lead__consent">By tapping above, you opt in to receive your customized birth-date audio files on WhatsApp. 100% Free &amp; Private.</p>
+      </form>
+    </section>
+
+    <!-- ========== REVIEWS ========== -->
+    <section class="reviews" id="reviews" hidden aria-labelledby="reviews-title">
+      <h2 id="reviews-title" class="section__title">How People Experience Their Birth-Month Sound at 11:00 PM</h2>
+      <div class="reviews__list" id="reviews-list"></div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+      <nav class="footer__links" aria-label="Legal">
+        <button type="button" class="link-btn" data-modal="privacy">Privacy</button>
+        <span aria-hidden="true">·</span>
+        <button type="button" class="link-btn" data-modal="terms">Terms</button>
+        <span aria-hidden="true">·</span>
+        <button type="button" class="link-btn" data-modal="contact">Contact</button>
+      </nav>
+      <p class="footer__disclaimer">Disclaimer: Karmic Waves synthesizes personalized acoustic soundscapes inspired by traditional Vedic Naad principles for meditation, relaxation, and mindfulness. This tool does not provide medical, psychological, or financial advice, and results vary by individual practice.</p>
+      <p class="footer__copy">© <span id="year"></span> Karmic Waves</p>
+    </footer>
+  </main>
+
+  <!-- ========== MODALS ========== -->
+  <div class="modal" id="modal" hidden>
+    <div class="modal__backdrop" data-close></div>
+    <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="modal-title" tabindex="-1">
+      <button type="button" class="modal__close" data-close aria-label="Close">×</button>
+      <h2 id="modal-title" class="modal__title"></h2>
+      <div class="modal__body" id="modal-body"></div>
+    </div>
+  </div>
+
+  <template id="tpl-privacy">
+    <p class="draft">DRAFT — requires legal review before publishing. Items marked [CLIENT TO CONFIRM] need the business's answer.</p>
+    <h3>1. Who we are</h3>
+    <p>Karmic Waves ("we") is operated by {{entityName}}. Contact: {{contactEmail}}.</p>
+    <h3>2. What we collect and why</h3>
+    <ul>
+      <li><strong>Date of birth</strong> — used only to determine your birth month, which selects the three free tracks you receive. We keep the full date you entered so we can answer "which tracks did I ask for?" support questions.</li>
+      <li><strong>WhatsApp number</strong> — used to send the three tracks and related messages on WhatsApp.</li>
+      <li><strong>Consent record</strong> — a yes/no flag with timestamp and the version of the consent text you saw.</li>
+      <li><strong>Campaign attribution</strong> — UTM parameters, Facebook click ID (fbclid) and referrer from the link you arrived on, to know which advert brought you here.</li>
+      <li><strong>Technical data</strong> — a hashed IP address and browser user-agent, kept for abuse prevention and rate limiting.</li>
+    </ul>
+    <p>We do not collect your name, email, location, contacts or payment details on this page.</p>
+    <h3>3. Legal basis (Digital Personal Data Protection Act, 2023)</h3>
+    <p>We process this data on the basis of your consent, given when you tap "Send My 3 Free Audio Tracks on WhatsApp". You may withdraw consent at any time by messaging STOP on WhatsApp or writing to {{contactEmail}}.</p>
+    <h3>4. Meta Pixel and advertising</h3>
+    <p>If enabled, this page loads the Meta Pixel to measure advertising results. When your lead is accepted we send Meta a "Lead" event containing a random event ID and the standard Pixel browser data. We never send your date of birth or phone number to Meta from this page. [CLIENT TO CONFIRM: whether hashed phone is shared via Conversions API for ad matching.]</p>
+    <h3>5. Where data is stored and for how long</h3>
+    <p>Lead records are stored in {{storageProvider}} and retained for {{retentionDays}}, after which they are deleted or anonymised. WhatsApp messages are processed by Meta Platforms under WhatsApp's own terms.</p>
+    <h3>6. Your rights</h3>
+    <p>You can ask for access to, correction of, or erasure of your data, or nominate another person to exercise these rights, by contacting {{contactEmail}}. Grievance officer: {{grievanceOfficer}}. We respond within the time required by law.</p>
+    <h3>7. Children</h3>
+    <p>This tool is intended for adults. The birth-year selector therefore stops at the year in which a visitor turns 18.</p>
+    <h3>8. Changes</h3>
+    <p>We will update this notice here when our practices change. Last updated: November 2026.</p>
+  </template>
+
+  <template id="tpl-terms">
+    <p class="draft">DRAFT — requires legal review before publishing.</p>
+    <h3>1. The service</h3>
+    <p>Karmic Waves provides three free audio tracks selected by your birth month, delivered on WhatsApp, for relaxation, meditation and mindfulness. The selection is based on a traditional-inspired creative mapping of months to elements and tunings. It is not an astronomical, astrological, medical or scientifically validated system.</p>
+    <h3>2. No professional advice</h3>
+    <p>Nothing on this page or in the audio constitutes medical, psychological, financial or legal advice. Do not use the tracks while driving or operating machinery. If you have a hearing, cardiac, neurological or mental-health condition, consult a professional before using sound-based relaxation content.</p>
+    <h3>3. Free of charge</h3>
+    <p>The three Birth-Month tracks on this page are free. Any other products or services are offered separately, with their own terms, inside WhatsApp. [CLIENT TO CONFIRM: reference to paid offers and their terms.]</p>
+    <h3>4. Messaging</h3>
+    <p>By opting in you agree to receive your tracks and related messages from our business WhatsApp number. Reply STOP to opt out at any time. Delivery depends on WhatsApp's service availability and message limits.</p>
+    <h3>5. Intellectual property</h3>
+    <p>The audio tracks are licensed to you for personal, non-commercial listening. You may not resell, redistribute or publicly perform them. [CLIENT TO CONFIRM: ownership of compositions and samples.]</p>
+    <h3>6. Fair use of the tool</h3>
+    <p>Automated, bulk or abusive use of this page is prohibited. We rate-limit requests and may decline to deliver to numbers that abuse the service.</p>
+    <h3>7. Limitation of liability</h3>
+    <p>To the extent permitted by law, we are not liable for indirect losses arising from use of the free tracks or this page. Results of any relaxation practice vary by individual.</p>
+    <h3>8. Governing law</h3>
+    <p>These terms are governed by the laws of India. Jurisdiction: [CLIENT TO CONFIRM]. Entity: {{entityName}}.</p>
+  </template>
+
+  <template id="tpl-contact">
+    <p>Questions about your free tracks, your data, or opting out:</p>
+    <ul>
+      <li><strong>WhatsApp:</strong> <span data-business-number>{{businessNumber}}</span></li>
+      <li><strong>Email:</strong> {{contactEmail}}</li>
+      <li><strong>Postal address:</strong> {{address}}</li>
+      <li><strong>Grievance officer:</strong> {{grievanceOfficer}}</li>
+    </ul>
+    <p>Support hours: [CLIENT TO CONFIRM]. We aim to respond within [CLIENT TO CONFIRM] working days.</p>
+  </template>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+  <script>
+/* Karmic Waves — single configuration object.
+ * Everything a non-developer may need to change lives here.
+ * Nothing in this file is secret: it ships to the browser.
+ */
+window.KW = window.KW || {};
+window.KW.config = {
+  brand: 'Karmic Waves',
+
+  // Business WhatsApp number in international format WITHOUT "+" (e.g. "919876543210").
+  // PENDING: replace the placeholder before launch. The app refuses to open wa.me while it is a placeholder.
+  businessWhatsApp: '91XXXXXXXXXX',
+
+  // Meta Pixel ID. Empty string = Pixel disabled (no base code injected, no events).
+  metaPixelId: '',
+
+  // Backend endpoint that stores the lead. Same-origin Vercel function by default.
+  leadEndpoint: '/api/lead',
+
+  // Set to true to let the page open WhatsApp even when the lead endpoint is unreachable
+  // (e.g. a pure static host with manual delivery). The Pixel Lead still does NOT fire then.
+  allowWhatsAppWithoutBackend: false,
+
+  site: {
+    url: 'https://karmicwaves.example.com', // PENDING: production domain
+    title: 'Karmic Waves — Your Birth Date Has a Sound. Hear Yours, Free.',
+    description:
+      'Select your Date of Birth and explore your 3 free Birth-Month Sound Tracks, inspired by traditional Vedic Naad practice. Delivered on WhatsApp.',
+    ogImage: 'https://karmicwaves.example.com/og-image.jpg', // PENDING: 1200×630 image
+    locale: 'en_IN'
+  },
+
+  // Trust strip. Rendered only when verified === true for an item. No invented numbers.
+  trust: [
+    { label: 'Listeners who received their kit', value: '', verified: false },
+    { label: 'Average rating', value: '', verified: false },
+    { label: 'Free kits sent', value: '', verified: false }
+  ],
+
+  // Reviews: only entries with approved === true render. Section hides when none are approved.
+  reviews: [
+    // { id: 'r1', name: 'First name', city: 'City', month: 'November', text: '…', time: '11:04 PM', approved: false }
+  ],
+
+  // Legal / contact placeholders. Keep [CLIENT TO CONFIRM] until the business answers.
+  legal: {
+    entityName: '[CLIENT TO CONFIRM] legal entity name',
+    contactEmail: '[CLIENT TO CONFIRM] contact email',
+    address: '[CLIENT TO CONFIRM] registered address',
+    retentionDays: '[CLIENT TO CONFIRM] (default proposed: 365 days)',
+    grievanceOfficer: '[CLIENT TO CONFIRM] grievance officer name',
+    consentTextVersion: 'v1-2026-11'
+  },
+
+  // Allowed birth years in the selector.
+  years: { min: 1955, max: 2008 },
+
+  // Track slots: the same three titles for every month.
+  trackTitles: ['Morning Aura Igniter', 'Daytime Focus Shield', '11:00 PM Deep Night Ritual'],
+
+  /* Month map — the ONLY place that decides which audio a visitor receives.
+   * Selection uses birth MONTH only; day and year never influence it.
+   * This is a traditional-inspired creative mapping, not an astronomical or validated system.
+   * `format` and `sizeBytes` are displayed only when `verified: true` (set after the real file is checked).
+   */
+  months: {
+    1:  { name: 'January',   element: 'Prithvi', hz: 396,   tattva: 'Earth', tracks: [
+          { id: 'jan-morning', title: 'Morning Aura Igniter',      file: '01-jan_morning.mp3', format: '', sizeBytes: 0, verified: false },
+          { id: 'jan-day',     title: 'Daytime Focus Shield',      file: '01-jan_day.mp3',     format: '', sizeBytes: 0, verified: false },
+          { id: 'jan-night',   title: '11:00 PM Deep Night Ritual', file: '01-jan_night.mp3',   format: '', sizeBytes: 0, verified: false } ] },
+    2:  { name: 'February',  element: 'Jala',    hz: 417,   tattva: 'Water', tracks: [
+          { id: 'feb-morning', title: 'Morning Aura Igniter',      file: '02-feb_morning.mp3', format: '', sizeBytes: 0, verified: false },
+          { id: 'feb-day',     title: 'Daytime Focus Shield',      file: '02-feb_day.mp3',     format: '', sizeBytes: 0, verified: false },
+          { id: 'feb-night',   title: '11:00 PM Deep Night Ritual', file: '02-feb_night.mp3',   format: '', sizeBytes: 0, verified: false } ] },
+    3:  { name: 'March',     element: 'Agni',    hz: 432.8, tattva: 'Fire',  tracks: [
+          { id: 'mar-morning', title: 'Morning Aura Igniter',      file: '03-mar_morning.mp3', format: '', sizeBytes: 0, verified: false },
+          { id: 'mar-day',     title: 'Daytime Focus Shield',      file: '03-mar_day.mp3',     format: '', sizeBytes: 0, verified: false },
+          { id: 'mar-night',   title: '11:00 PM Deep Night Ritual', file: '03-mar_night.mp3',   format: '', sizeBytes: 0, verified: false } ] },
+    4:  { name: 'April',     element: 'Vayu',    hz: 528,   tattva: 'Air',   tracks: [
+          { id: 'apr-morning', title: 'Morning Aura Igniter',      file: '04-apr_morning.mp3', format: '', sizeBytes: 0, verified: false },
+          { id: 'apr-day',     title: 'Daytime Focus Shield',      file: '04-apr_day.mp3',     format: '', sizeBytes: 0, verified: false },
+          { id: 'apr-night',   title: '11:00 PM Deep Night Ritual', file: '04-apr_night.mp3',   format: '', sizeBytes: 0, verified: false } ] },
+    5:  { name: 'May',       element: 'Akasha',  hz: 639,   tattva: 'Space', tracks: [
+          { id: 'may-morning', title: 'Morning Aura Igniter',      file: '05-may_morning.mp3', format: '', sizeBytes: 0, verified: false },
+          { id: 'may-day',     title: 'Daytime Focus Shield',      file: '05-may_day.mp3',     format: '', sizeBytes: 0, verified: false },
+          { id: 'may-night',   title: '11:00 PM Deep Night Ritual', file: '05-may_night.mp3',   format: '', sizeBytes: 0, verified: false } ] },
+    6:  { name: 'June',      element: 'Jala',    hz: 417,   tattva: 'Water', tracks: [
+          { id: 'jun-morning', title: 'Morning Aura Igniter',      file: '06-jun_morning.mp3', format: '', sizeBytes: 0, verified: false },
+          { id: 'jun-day',     title: 'Daytime Focus Shield',      file: '06-jun_day.mp3',     format: '', sizeBytes: 0, verified: false },
+          { id: 'jun-night',   title: '11:00 PM Deep Night Ritual', file: '06-jun_night.mp3',   format: '', sizeBytes: 0, verified: false } ] },
+    7:  { name: 'July',      element: 'Agni',    hz: 432.8, tattva: 'Fire',  tracks: [
+          { id: 'jul-morning', title: 'Morning Aura Igniter',      file: '07-jul_morning.mp3', format: '', sizeBytes: 0, verified: false },
+          { id: 'jul-day',     title: 'Daytime Focus Shield',      file: '07-jul_day.mp3',     format: '', sizeBytes: 0, verified: false },
+          { id: 'jul-night',   title: '11:00 PM Deep Night Ritual', file: '07-jul_night.mp3',   format: '', sizeBytes: 0, verified: false } ] },
+    8:  { name: 'August',    element: 'Prithvi', hz: 396,   tattva: 'Earth', tracks: [
+          { id: 'aug-morning', title: 'Morning Aura Igniter',      file: '08-aug_morning.mp3', format: '', sizeBytes: 0, verified: false },
+          { id: 'aug-day',     title: 'Daytime Focus Shield',      file: '08-aug_day.mp3',     format: '', sizeBytes: 0, verified: false },
+          { id: 'aug-night',   title: '11:00 PM Deep Night Ritual', file: '08-aug_night.mp3',   format: '', sizeBytes: 0, verified: false } ] },
+    9:  { name: 'September', element: 'Vayu',    hz: 528,   tattva: 'Air',   tracks: [
+          { id: 'sep-morning', title: 'Morning Aura Igniter',      file: '09-sep_morning.mp3', format: '', sizeBytes: 0, verified: false },
+          { id: 'sep-day',     title: 'Daytime Focus Shield',      file: '09-sep_day.mp3',     format: '', sizeBytes: 0, verified: false },
+          { id: 'sep-night',   title: '11:00 PM Deep Night Ritual', file: '09-sep_night.mp3',   format: '', sizeBytes: 0, verified: false } ] },
+    10: { name: 'October',   element: 'Akasha',  hz: 741,   tattva: 'Space', tracks: [
+          { id: 'oct-morning', title: 'Morning Aura Igniter',      file: '10-oct_morning.mp3', format: '', sizeBytes: 0, verified: false },
+          { id: 'oct-day',     title: 'Daytime Focus Shield',      file: '10-oct_day.mp3',     format: '', sizeBytes: 0, verified: false },
+          { id: 'oct-night',   title: '11:00 PM Deep Night Ritual', file: '10-oct_night.mp3',   format: '', sizeBytes: 0, verified: false } ] },
+    11: { name: 'November',  element: 'Jala',    hz: 417,   tattva: 'Water', tracks: [
+          { id: 'nov-morning', title: 'Morning Aura Igniter',      file: '11-nov_morning.mp3', format: '', sizeBytes: 0, verified: false },
+          { id: 'nov-day',     title: 'Daytime Focus Shield',      file: '11-nov_day.mp3',     format: '', sizeBytes: 0, verified: false },
+          { id: 'nov-night',   title: '11:00 PM Deep Night Ritual', file: '11-nov_night.mp3',   format: '', sizeBytes: 0, verified: false } ] },
+    12: { name: 'December',  element: 'Akasha',  hz: 852,   tattva: 'Space', tracks: [
+          { id: 'dec-morning', title: 'Morning Aura Igniter',      file: '12-dec_morning.mp3', format: '', sizeBytes: 0, verified: false },
+          { id: 'dec-day',     title: 'Daytime Focus Shield',      file: '12-dec_day.mp3',     format: '', sizeBytes: 0, verified: false },
+          { id: 'dec-night',   title: '11:00 PM Deep Night Ritual', file: '12-dec_night.mp3',   format: '', sizeBytes: 0, verified: false } ] }
+  }
+};
+
+/* Karmic Waves — application logic (no framework, no build-time dependencies). */
+(function () {
+  'use strict';
+
+  var KW = window.KW;
+  var cfg = KW.config;
+  var $ = function (sel, root) { return (root || document).querySelector(sel); };
+  var $$ = function (sel, root) { return Array.prototype.slice.call((root || document).querySelectorAll(sel)); };
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var isAndroid = /Android/i.test(navigator.userAgent);
+
+  /* ------------------------------------------------------------------ */
+  /* Utilities                                                           */
+  /* ------------------------------------------------------------------ */
+  var util = {
+    pad2: function (n) { return (n < 10 ? '0' : '') + n; },
+    isLeap: function (y) { return (y % 4 === 0 && y % 100 !== 0) || y % 400 === 0; },
+    daysInMonth: function (m, y) { return [31, util.isLeap(y) ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31][m - 1]; },
+    /* Returns { ok, reason } for a real calendar date not in the future and inside the configured year range. */
+    validateDob: function (d, m, y) {
+      if (!d || !m || !y) return { ok: false, reason: 'Please choose day, month and year.' };
+      if (y < cfg.years.min || y > cfg.years.max) return { ok: false, reason: 'Please choose a year between ' + cfg.years.min + ' and ' + cfg.years.max + '.' };
+      if (m < 1 || m > 12) return { ok: false, reason: 'Please choose a valid month.' };
+      var dim = util.daysInMonth(m, y);
+      if (d < 1 || d > dim) {
+        return { ok: false, reason: cfg.months[m].name + ' ' + y + ' has only ' + dim + ' days. Please adjust the day.' };
+      }
+      var dt = new Date(y, m - 1, d);
+      if (dt.getTime() > Date.now()) return { ok: false, reason: 'A birth date cannot be in the future.' };
+      return { ok: true };
+    },
+    /* Indian mobile: 10 digits, first digit 6–9. Returns E.164 or null. */
+    normalizePhoneIN: function (raw) {
+      var digits = String(raw || '').replace(/\D/g, '');
+      if (digits.length === 12 && digits.slice(0, 2) === '91') digits = digits.slice(2);
+      if (digits.length === 11 && digits[0] === '0') digits = digits.slice(1);
+      return /^[6-9]\d{9}$/.test(digits) ? '+91' + digits : null;
+    },
+    vibrate: function (pattern) {
+      if (isAndroid && 'vibrate' in navigator) { try { navigator.vibrate(pattern); } catch (e) { /* ignore */ } }
+    },
+    uuid: function () {
+      if (window.crypto && crypto.randomUUID) return crypto.randomUUID();
+      var a = new Uint8Array(16); (window.crypto || {}).getRandomValues ? crypto.getRandomValues(a) : a.forEach(function (_, i) { a[i] = Math.random() * 256 | 0; });
+      a[6] = (a[6] & 0x0f) | 0x40; a[8] = (a[8] & 0x3f) | 0x80;
+      var h = Array.prototype.map.call(a, function (b) { return (b + 256).toString(16).slice(1); }).join('');
+      return h.slice(0, 8) + '-' + h.slice(8, 12) + '-' + h.slice(12, 16) + '-' + h.slice(16, 20) + '-' + h.slice(20);
+    },
+    attribution: function () {
+      var p = new URLSearchParams(location.search);
+      var pick = function (k) { return (p.get(k) || '').slice(0, 200); };
+      return {
+        utm_source: pick('utm_source'), utm_medium: pick('utm_medium'), utm_campaign: pick('utm_campaign'),
+        utm_content: pick('utm_content'), utm_term: pick('utm_term'), fbclid: pick('fbclid'),
+        referrer: (document.referrer || '').slice(0, 300), landing_path: location.pathname + location.search.slice(0, 500)
+      };
+    },
+    businessNumberOk: function () { return /^91[6-9]\d{9}$/.test(String(cfg.businessWhatsApp || '')); }
+  };
+  KW.util = util; // exposed for tests
+
+  /* ------------------------------------------------------------------ */
+  /* Toast                                                               */
+  /* ------------------------------------------------------------------ */
+  var toastEl = $('#toast'), toastTimer = null;
+  function toast(msg, ms) {
+    clearTimeout(toastTimer);
+    toastEl.textContent = msg; toastEl.hidden = false;
+    toastTimer = setTimeout(function () { toastEl.hidden = true; }, ms || 3200);
+  }
+
+  /* ------------------------------------------------------------------ */
+  /* Trust strip + reviews (config-driven; hidden without verified data) */
+  /* ------------------------------------------------------------------ */
+  (function renderTrust() {
+    var items = (cfg.trust || []).filter(function (t) { return t.verified === true && t.value; });
+    var ul = $('#trust-strip');
+    if (!items.length) return;
+    items.forEach(function (t) {
+      var li = document.createElement('li');
+      var s = document.createElement('strong'); s.textContent = t.value;
+      li.appendChild(s); li.appendChild(document.createTextNode(t.label));
+      ul.appendChild(li);
+    });
+    ul.hidden = false;
+  })();
+
+  (function renderReviews() {
+    var approved = (cfg.reviews || []).filter(function (r) { return r.approved === true && r.text; });
+    if (!approved.length) return;
+    var list = $('#reviews-list');
+    approved.forEach(function (r) {
+      var card = document.createElement('article'); card.className = 'review';
+      var head = document.createElement('div'); head.className = 'review__head';
+      var name = document.createElement('span'); name.className = 'review__name'; name.textContent = r.name || 'Listener';
+      var where = document.createElement('span'); where.textContent = [r.city, r.month ? r.month + ' kit' : ''].filter(Boolean).join(' · ');
+      head.appendChild(name); head.appendChild(where);
+      var text = document.createElement('p'); text.className = 'review__text'; text.textContent = r.text;
+      card.appendChild(head); card.appendChild(text);
+      if (r.time) { var t = document.createElement('span'); t.className = 'review__time'; t.textContent = r.time; card.appendChild(t); }
+      list.appendChild(card);
+    });
+    $('#reviews').hidden = false;
+  })();
+
+  $('#year').textContent = String(new Date().getFullYear());
+
+  /* ------------------------------------------------------------------ */
+  /* DOB console                                                         */
+  /* ------------------------------------------------------------------ */
+  var daySel = $('#dob-day'), monthSel = $('#dob-month'), yearSel = $('#dob-year');
+  var dobError = $('#dob-error'), readout = $('#readout'), synthBtn = $('#synth-btn'), mandala = $('#mandala');
+  var mandalaAngle = 0;
+  var state = { phase: 'idle', dob: null, month: null };
+
+  function fill(sel, placeholder, values, labelFn) {
+    var frag = document.createDocumentFragment();
+    var ph = document.createElement('option'); ph.value = ''; ph.textContent = placeholder; ph.disabled = true; ph.selected = true;
+    frag.appendChild(ph);
+    values.forEach(function (v) { var o = document.createElement('option'); o.value = String(v); o.textContent = labelFn ? labelFn(v) : String(v); frag.appendChild(o); });
+    sel.appendChild(frag);
+  }
+  var range = function (a, b, step) { var out = []; for (var i = a; step > 0 ? i <= b : i >= b; i += step) out.push(i); return out; };
+  fill(daySel, 'DD', range(1, 31, 1), util.pad2);
+  fill(monthSel, 'Month', range(1, 12, 1), function (m) { return cfg.months[m].name; });
+  fill(yearSel, 'YYYY', range(cfg.years.max, cfg.years.min, -1));
+
+  function currentDob() {
+    return { d: parseInt(daySel.value, 10) || 0, m: parseInt(monthSel.value, 10) || 0, y: parseInt(yearSel.value, 10) || 0 };
+  }
+
+  function spinMandala() {
+    if (reduceMotion) return;
+    mandalaAngle += 60;
+    mandala.style.transform = 'rotate(' + mandalaAngle + 'deg)';
+  }
+
+  function onDobChange() {
+    var v = currentDob();
+    spinMandala();
+    util.vibrate(15);
+    var complete = v.d && v.m && v.y;
+    var res = complete ? util.validateDob(v.d, v.m, v.y) : { ok: false };
+    if (complete && !res.ok) {
+      dobError.textContent = res.reason; dobError.hidden = false;
+    } else {
+      dobError.hidden = true; dobError.textContent = '';
+    }
+    if (res.ok) {
+      var mo = cfg.months[v.m];
+      readout.innerHTML = '';
+      var line = document.createElement('span');
+      line.appendChild(document.createTextNode('Natal Resonance Detected: '));
+      var e = document.createElement('strong'); e.textContent = mo.element; line.appendChild(e);
+      line.appendChild(document.createTextNode(' • Base Acoustic Tuning: '));
+      var h = document.createElement('strong'); h.textContent = mo.hz + ' Hz'; line.appendChild(h);
+      readout.appendChild(line);
+      synthBtn.disabled = false;
+      state.phase = 'ready';
+      state.dob = { y: v.y, m: v.m, d: v.d, iso: v.y + '-' + util.pad2(v.m) + '-' + util.pad2(v.d) };
+      state.month = v.m;
+    } else {
+      readout.innerHTML = '<span class="readout__idle">Choose day, month and year to detect your resonance.</span>';
+      synthBtn.disabled = true;
+      state.phase = 'idle'; state.dob = null; state.month = null;
+    }
+  }
+  [daySel, monthSel, yearSel].forEach(function (s) { s.addEventListener('change', onDobChange); });
+
+  $('#dob-form').addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    var v = currentDob();
+    var res = util.validateDob(v.d, v.m, v.y);
+    if (!res.ok) { dobError.textContent = res.reason; dobError.hidden = false; daySel.focus(); return; }
+    if (state.phase !== 'ready') return;
+    [daySel, monthSel, yearSel].forEach(function (s) { s.disabled = true; });
+    synthBtn.disabled = true;
+    startProcessing();
+  });
+
+  /* ------------------------------------------------------------------ */
+  /* Ambient audio (Web Audio) — starts only from the CTA click          */
+  /* ------------------------------------------------------------------ */
+  var ambient = {
+    ctx: null, master: null, muted: false,
+    start: function (durationSec) {
+      var AC = window.AudioContext || window.webkitAudioContext;
+      if (!AC) return false;
+      try {
+        var ctx = new AC();
+        this.ctx = ctx;
+        var now = ctx.currentTime;
+        var master = ctx.createGain(); master.gain.setValueAtTime(0.0001, now);
+        master.gain.exponentialRampToValueAtTime(this.muted ? 0.0001 : 0.22, now + 1.0);
+        master.gain.setValueAtTime(this.muted ? 0.0001 : 0.22, now + durationSec - 1.2);
+        master.gain.exponentialRampToValueAtTime(0.0001, now + durationSec);
+        var lp = ctx.createBiquadFilter(); lp.type = 'lowpass'; lp.frequency.value = 900; lp.Q.value = 0.7;
+        var o1 = ctx.createOscillator(); o1.type = 'sine'; o1.frequency.value = 432;
+        var o2 = ctx.createOscillator(); o2.type = 'sine'; o2.frequency.value = 216;
+        var g2 = ctx.createGain(); g2.gain.value = 0.6;
+        o1.connect(lp); o2.connect(g2); g2.connect(lp); lp.connect(master); master.connect(ctx.destination);
+        o1.start(now); o2.start(now); o1.stop(now + durationSec); o2.stop(now + durationSec);
+        /* soft chime near the end */
+        var chimeAt = now + durationSec - 0.3;
+        var c = ctx.createOscillator(); c.type = 'sine'; c.frequency.value = 864;
+        var cg = ctx.createGain(); cg.gain.setValueAtTime(0.0001, chimeAt);
+        cg.gain.exponentialRampToValueAtTime(0.18, chimeAt + 0.03); cg.gain.exponentialRampToValueAtTime(0.0001, chimeAt + 1.4);
+        c.connect(cg); cg.connect(master); c.start(chimeAt); c.stop(chimeAt + 1.5);
+        this.master = master;
+        if (ctx.state === 'suspended') { ctx.resume().catch(function () { /* ignore */ }); }
+        return true;
+      } catch (e) { this.ctx = null; return false; }
+    },
+    setMuted: function (m) {
+      this.muted = m;
+      if (this.ctx && this.master) {
+        var t = this.ctx.currentTime;
+        this.master.gain.cancelScheduledValues(t);
+        this.master.gain.setTargetAtTime(m ? 0.0001 : 0.22, t, 0.05);
+      }
+    },
+    stop: function () {
+      var ctx = this.ctx; this.ctx = null; this.master = null;
+      if (ctx && ctx.state !== 'closed') { try { ctx.close().catch(function () { /* ignore */ }); } catch (e) { /* ignore */ } }
+    }
+  };
+  $('#mute-btn').addEventListener('click', function () {
+    var next = this.getAttribute('aria-pressed') !== 'true';
+    this.setAttribute('aria-pressed', String(next));
+    this.setAttribute('aria-label', next ? 'Unmute ambient preview' : 'Mute ambient preview');
+    ambient.setMuted(next);
+  });
+
+  /* ------------------------------------------------------------------ */
+  /* Processing sequence (6.5 s)                                         */
+  /* ------------------------------------------------------------------ */
+  var PROCESS_MS = 6500;
+  var NODE_TIMES = [0, 1500, 3200, 5000]; // ms at which each node becomes active
+  var processing = $('#processing'), nodesEl = $('#nodes'), nodeEls = $$('.node'), hzEl = $('#hz-value'), canvas = $('#wave');
+  var timers = [], rafHandle = 0, waveActive = false, procStart = 0;
+
+  function clearTimers() { timers.forEach(clearTimeout); timers = []; }
+  function later(fn, ms) { timers.push(setTimeout(fn, ms)); }
+
+  /* Hz counter: purely time-based visual effect, not a measurement of anything. */
+  function hzAt(t) {
+    var stops = [[0, 136.1], [0.5, 432.0], [1, 528.0]];
+    for (var i = 1; i < stops.length; i++) {
+      if (t <= stops[i][0]) {
+        var a = stops[i - 1], b = stops[i], k = (t - a[0]) / (b[0] - a[0]);
+        k = k < 0 ? 0 : k > 1 ? 1 : k; k = k * k * (3 - 2 * k);
+        return a[1] + (b[1] - a[1]) * k;
+      }
+    }
+    return 528.0;
+  }
+
+  function startWave(startTs) {
+    var ctx = canvas.getContext('2d');
+    if (!ctx) return;
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    function size() {
+      var w = canvas.clientWidth || 400, h = canvas.clientHeight || 90;
+      if (canvas.width !== Math.round(w * dpr) || canvas.height !== Math.round(h * dpr)) {
+        canvas.width = Math.round(w * dpr); canvas.height = Math.round(h * dpr);
+      }
+      return { w: w, h: h };
+    }
+    waveActive = true;
+    var lastHz = -1;
+    function frame(now) {
+      if (!waveActive) return;
+      var el = now - startTs, t = Math.min(el / PROCESS_MS, 1);
+      var s = size(), w = s.w, h = s.h;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      ctx.clearRect(0, 0, w, h);
+      var amp = h * 0.32 * (0.35 + 0.65 * Math.sin(Math.min(t, 1) * Math.PI));
+      var freq = 2 + t * 4, phase = el / 300;
+      ctx.lineWidth = 2; ctx.lineCap = 'round';
+      [[1, 'rgba(0,242,254,0.95)'], [0.55, 'rgba(212,175,55,0.55)']].forEach(function (layer, li) {
+        ctx.beginPath();
+        for (var x = 0; x <= w; x += 2) {
+          var y = h / 2 + Math.sin((x / w) * Math.PI * 2 * freq + phase * (li ? 0.7 : 1)) * amp * layer[0] * Math.sin((x / w) * Math.PI);
+          x === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+        }
+        ctx.strokeStyle = layer[1]; ctx.shadowColor = layer[1]; ctx.shadowBlur = li ? 0 : 10; ctx.stroke();
+      });
+      var hz = hzAt(t);
+      if (Math.abs(hz - lastHz) >= 0.05) { hzEl.textContent = hz.toFixed(1); lastHz = hz; }
+      if (t < 1) rafHandle = requestAnimationFrame(frame); else waveActive = false;
+    }
+    rafHandle = requestAnimationFrame(frame);
+  }
+  function stopWave() { waveActive = false; if (rafHandle) cancelAnimationFrame(rafHandle); rafHandle = 0; }
+
+  function setNode(i, cls) {
+    nodeEls.forEach(function (el, idx) {
+      if (idx < i) { el.classList.remove('is-active'); el.classList.add('is-done'); }
+      else if (idx === i) { el.classList.add(cls); }
+    });
+  }
+
+  function startProcessing() {
+    state.phase = 'processing';
+    processing.hidden = false;
+    nodeEls.forEach(function (el) { el.classList.remove('is-active', 'is-done'); });
+    nodesEl.classList.remove('is-running'); void nodesEl.offsetWidth; nodesEl.classList.add('is-running');
+    processing.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
+    ambient.start(PROCESS_MS / 1000);
+
+    var startTs = performance.now();
+    procStart = startTs;
+    if (!reduceMotion) startWave(startTs); else { hzEl.textContent = '528.0'; }
+
+    NODE_TIMES.forEach(function (ms, i) {
+      later(function () { setNode(i, 'is-active'); if (i > 0) util.vibrate(22); }, ms);
+    });
+    later(function () {
+      nodeEls.forEach(function (el) { el.classList.remove('is-active'); el.classList.add('is-done'); });
+      util.vibrate([40, 60, 40]);
+      stopWave();
+      ambient.stop();
+      showResult();
+    }, PROCESS_MS);
+  }
+
+  document.addEventListener('visibilitychange', function () {
+    /* When the tab is hidden mid-processing, the rAF pauses by itself; timers continue so the sequence still completes. */
+    if (document.visibilityState === 'visible' && state.phase === 'processing' && !waveActive && !reduceMotion &&
+        performance.now() - procStart < PROCESS_MS) {
+      startWave(procStart);
+    }
+  });
+
+  /* ------------------------------------------------------------------ */
+  /* Result card                                                         */
+  /* ------------------------------------------------------------------ */
+  var resultEl = $('#result'), phoneInput = $('#phone'), phoneError = $('#phone-error'), sendBtn = $('#send-btn'), leadStatus = $('#lead-status');
+
+  function fmtBytes(b) { return b >= 1048576 ? (b / 1048576).toFixed(1) + ' MB' : Math.round(b / 1024) + ' KB'; }
+
+  function showResult() {
+    state.phase = 'result';
+    var mo = cfg.months[state.month];
+    $('#kit-month').textContent = mo.name;
+    $('#result-meta').textContent = mo.element + ' resonance • ' + mo.hz + ' Hz base tuning • 3 tracks';
+    var list = $('#result-tracks'); list.innerHTML = '';
+    mo.tracks.forEach(function (t) {
+      var li = document.createElement('li'); li.className = 'result__track';
+      var box = document.createElement('div');
+      var title = document.createElement('div'); title.className = 'result__track-title'; title.textContent = t.title;
+      box.appendChild(title);
+      if (t.verified === true && (t.format || t.sizeBytes)) {
+        var meta = document.createElement('div'); meta.className = 'result__track-meta';
+        meta.textContent = [t.format, t.sizeBytes ? fmtBytes(t.sizeBytes) : ''].filter(Boolean).join(' • ');
+        box.appendChild(meta);
+      }
+      li.appendChild(box); list.appendChild(li);
+    });
+    resultEl.hidden = false;
+    later(function () {
+      resultEl.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
+      resultEl.focus({ preventScroll: true });
+    }, 50);
+  }
+
+  function validatePhoneUI() {
+    var e164 = util.normalizePhoneIN(phoneInput.value);
+    if (!phoneInput.value.trim()) { phoneError.textContent = 'Please enter your 10-digit WhatsApp number.'; phoneError.hidden = false; return null; }
+    if (!e164) { phoneError.textContent = 'Enter a valid Indian mobile number: 10 digits, starting with 6, 7, 8 or 9.'; phoneError.hidden = false; return null; }
+    phoneError.hidden = true; phoneError.textContent = '';
+    return e164;
+  }
+  phoneInput.addEventListener('input', function () {
+    this.value = this.value.replace(/\D/g, '').slice(0, 10);
+    if (!phoneError.hidden) validatePhoneUI();
+  });
+
+  /* ------------------------------------------------------------------ */
+  /* Meta Pixel — base code only when an ID exists; Lead fired once      */
+  /* ------------------------------------------------------------------ */
+  var pixel = {
+    loaded: false, leadFired: false,
+    init: function () {
+      if (!cfg.metaPixelId || this.loaded) return;
+      /* Standard Meta Pixel base code */
+      !function (f, b, e, v, n, t, s) { if (f.fbq) return; n = f.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments); }; if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = []; t = b.createElement(e); t.async = !0; t.src = v; s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s); }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+      window.fbq('init', cfg.metaPixelId);
+      window.fbq('track', 'PageView');
+      this.loaded = true;
+    },
+    lead: function (eventId) {
+      if (!this.loaded || this.leadFired || !window.fbq) return false;
+      this.leadFired = true;
+      /* Only non-personal data: no DOB, no phone. */
+      window.fbq('track', 'Lead', { content_name: 'birth_month_free_kit', content_category: 'free_tool' }, { eventID: eventId });
+      return true;
+    }
+  };
+  pixel.init();
+  KW.pixel = pixel;
+
+  /* ------------------------------------------------------------------ */
+  /* Lead submit → backend → Pixel → WhatsApp                            */
+  /* ------------------------------------------------------------------ */
+  function waUrl(dobIso) {
+    var d = dobIso.split('-');
+    var text = 'Namaste Karmic Waves, please send my 3 Free Birth-Month Audio Tracks for DOB: ' + d[2] + '/' + d[1] + '/' + d[0];
+    return 'https://wa.me/' + cfg.businessWhatsApp + '?text=' + encodeURIComponent(text);
+  }
+  KW.waUrl = waUrl;
+
+  function setStatus(msg, isError) { leadStatus.textContent = msg; leadStatus.classList.toggle('is-error', !!isError); }
+
+  function postLead(payload) {
+    var ctrl = typeof AbortController !== 'undefined' ? new AbortController() : null;
+    var timeout = setTimeout(function () { if (ctrl) ctrl.abort(); }, 12000);
+    return fetch(cfg.leadEndpoint, {
+      method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload),
+      signal: ctrl ? ctrl.signal : undefined, credentials: 'same-origin'
+    }).then(function (r) {
+      clearTimeout(timeout);
+      return r.json().catch(function () { return {}; }).then(function (j) { j.__status = r.status; return j; });
+    }, function (err) { clearTimeout(timeout); throw err; });
+  }
+
+  var submitting = false;
+  $('#lead-form').addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    if (submitting) return;
+    var e164 = validatePhoneUI();
+    if (!e164) { phoneInput.focus(); return; }
+    if (!state.dob) { toast('Please select your date of birth first.'); return; }
+    if (!util.businessNumberOk()) {
+      setStatus('WhatsApp number for the business is not configured yet. Please try again later.', true);
+      return;
+    }
+    submitting = true; sendBtn.classList.add('is-busy'); sendBtn.setAttribute('aria-disabled', 'true');
+    setStatus('Saving your request…');
+
+    var payload = {
+      dob: state.dob.iso, birthMonth: state.month, phone: e164, consent: true,
+      consentAt: new Date().toISOString(), consentTextVersion: cfg.legal.consentTextVersion,
+      clientEventId: util.uuid(), attribution: util.attribution()
+    };
+
+    postLead(payload).then(function (res) {
+      if (res && res.ok) {
+        var eventId = res.eventId || payload.clientEventId;
+        var fired = pixel.lead(eventId);
+        setStatus(res.stored === 'pending'
+          ? 'Request noted. Opening WhatsApp…'
+          : 'Saved. Opening WhatsApp…');
+        openWhatsApp();
+        if (!fired && cfg.metaPixelId) { /* nothing: Pixel not loaded (blocked) — never retry blindly */ }
+      } else if (res && res.__status === 429) {
+        setStatus('Too many requests from this network. Please try again in a few minutes.', true);
+        finish();
+      } else if (res && res.error) {
+        setStatus(res.error, true); finish();
+      } else {
+        throw new Error('bad_response');
+      }
+    }).catch(function () {
+      if (cfg.allowWhatsAppWithoutBackend) {
+        /* Static-host mode: we can still open WhatsApp, but nothing is stored and no Pixel Lead fires. */
+        setStatus('Opening WhatsApp… (your request will be noted inside the chat)');
+        openWhatsApp();
+      } else {
+        setStatus('We could not save your request right now. Please check your connection and try again.', true);
+        finish();
+      }
+    });
+
+    function openWhatsApp() {
+      var url = waUrl(state.dob.iso);
+      state.phase = 'sent';
+      sendBtn.classList.remove('is-busy'); sendBtn.removeAttribute('aria-disabled');
+      $('#send-label').textContent = 'Open WhatsApp again';
+      submitting = false;
+      /* Same tab is most reliable on mobile; desktop gets a new tab. */
+      var isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+      if (isMobile) { location.href = url; } else { var w = window.open(url, '_blank', 'noopener'); if (!w) location.href = url; }
+    }
+    function finish() { submitting = false; sendBtn.classList.remove('is-busy'); sendBtn.removeAttribute('aria-disabled'); }
+  });
+
+  /* ------------------------------------------------------------------ */
+  /* Modals (Privacy / Terms / Contact)                                  */
+  /* ------------------------------------------------------------------ */
+  var modal = $('#modal'), modalDialog = $('.modal__dialog', modal), modalTitle = $('#modal-title'), modalBody = $('#modal-body');
+  var lastFocus = null;
+  var titles = { privacy: 'Privacy Notice', terms: 'Terms of Use', contact: 'Contact' };
+  function fillTemplate(html) {
+    var map = {
+      entityName: cfg.legal.entityName, contactEmail: cfg.legal.contactEmail, address: cfg.legal.address,
+      retentionDays: cfg.legal.retentionDays, grievanceOfficer: cfg.legal.grievanceOfficer,
+      businessNumber: util.businessNumberOk() ? '+' + cfg.businessWhatsApp : '[CLIENT TO CONFIRM] business WhatsApp number',
+      storageProvider: '[CLIENT TO CONFIRM] lead storage provider'
+    };
+    return html.replace(/\{\{(\w+)\}\}/g, function (_, k) { return k in map ? map[k] : ''; });
+  }
+  function openModal(kind) {
+    var tpl = $('#tpl-' + kind); if (!tpl) return;
+    lastFocus = document.activeElement;
+    modalTitle.textContent = titles[kind] || '';
+    modalBody.innerHTML = fillTemplate(tpl.innerHTML); // templates are static author-controlled markup
+    modal.hidden = false; document.body.classList.add('modal-open');
+    modalDialog.focus();
+  }
+  function closeModal() {
+    if (modal.hidden) return;
+    modal.hidden = true; document.body.classList.remove('modal-open');
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+  $$('[data-modal]').forEach(function (b) { b.addEventListener('click', function () { openModal(b.getAttribute('data-modal')); }); });
+  modal.addEventListener('click', function (e) { if (e.target.closest('[data-close]')) closeModal(); });
+  document.addEventListener('keydown', function (e) {
+    if (modal.hidden) return;
+    if (e.key === 'Escape') { closeModal(); return; }
+    if (e.key === 'Tab') {
+      var f = $$('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])', modalDialog).filter(function (el) { return !el.disabled; });
+      if (!f.length) return;
+      var first = f[0], last = f[f.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    }
+  });
+
+  /* Cleanup on unload: no dangling timers / audio. */
+  window.addEventListener('pagehide', function () { clearTimers(); stopWave(); ambient.stop(); });
+
+  KW.state = state; // read-only for tests
+})();
+
+</script>
+</body>
+</html>
