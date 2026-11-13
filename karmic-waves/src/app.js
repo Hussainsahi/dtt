@@ -3,7 +3,7 @@
   'use strict';
 
   var KW = window.KW;
-  var cfg = KW.config;
+  var cfg = KW.freeBirthSound;
   var $ = function (sel, root) { return (root || document).querySelector(sel); };
   var $$ = function (sel, root) { return Array.prototype.slice.call((root || document).querySelectorAll(sel)); };
   var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -57,7 +57,7 @@
     },
     businessNumberOk: function () { return /^91[6-9]\d{9}$/.test(String(cfg.businessWhatsApp || '')); }
   };
-  KW.util = util; // exposed for tests
+  KW.fbs = KW.fbs || {}; KW.fbs.util = util; // exposed for tests
 
   /* ------------------------------------------------------------------ */
   /* Toast                                                               */
@@ -103,7 +103,7 @@
     $('#reviews').hidden = false;
   })();
 
-  $('#year').textContent = String(new Date().getFullYear());
+  var yearEl = $('#year'); if (yearEl) yearEl.textContent = String(new Date().getFullYear());
   if (cfg.previewMode) { $('#preview-ribbon').hidden = false; }
 
   /* ------------------------------------------------------------------ */
@@ -399,7 +399,7 @@
     }
   };
   pixel.init();
-  KW.pixel = pixel;
+  KW.fbs.pixel = pixel;
 
   /* ------------------------------------------------------------------ */
   /* Lead submit → backend → Pixel → WhatsApp                            */
@@ -409,7 +409,7 @@
     var text = 'Namaste Karmic Waves, please send my 3 Free Birth-Month Audio Tracks for DOB: ' + d[2] + '/' + d[1] + '/' + d[0];
     return 'https://wa.me/' + cfg.businessWhatsApp + '?text=' + encodeURIComponent(text);
   }
-  KW.waUrl = waUrl;
+  KW.fbs.waUrl = waUrl;
 
   function setStatus(msg, isError) { leadStatus.textContent = msg; leadStatus.classList.toggle('is-error', !!isError); }
 
@@ -538,5 +538,5 @@
   /* Cleanup on unload: no dangling timers / audio. */
   window.addEventListener('pagehide', function () { clearTimers(); stopWave(); ambient.stop(); });
 
-  KW.state = state; // read-only for tests
+  KW.fbs.state = state; // read-only for tests
 })();

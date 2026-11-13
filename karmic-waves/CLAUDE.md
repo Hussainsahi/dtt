@@ -30,7 +30,7 @@ Brand: Karmic Waves. Positioning line: "Ancient Vedic Naad-Vigyan • 100% free 
 
 ## 3. Audio library contract
 - 36 files = 12 months × 3 tracks: **Morning Aura Igniter**, **Daytime Focus Shield**, **11:00 PM Deep Night Ritual**.
-- One editable object `KW.config.months` (in `src/config.js`), one entry per month: `{ element, hz, tattva, tracks: [{ id, title, file, format, sizeBytes, verified: false } ×3] }`.
+- One editable object `KW.freeBirthSound.months` (in `src/config.js`), one entry per month: `{ element, hz, tattva, tracks: [{ id, title, file, format, sizeBytes, verified: false } ×3] }`.
 - Element / Hz: Jan Prithvi 396 · Feb Jala 417 · Mar Agni 432.8 · Apr Vayu 528 · May Akasha 639 · Jun Jala 417 · Jul Agni 432.8 · Aug Prithvi 396 · Sep Vayu 528 · Oct Akasha 741 · Nov Jala 417 · Dec Akasha 852.
 - Audio is chosen by **birth month only**. Day and year never affect selection.
 - `scripts/validate-audio.mjs` must prove all 36 files resolve before deploy and fail loudly otherwise.
@@ -38,7 +38,7 @@ Brand: Karmic Waves. Positioning line: "Ancient Vedic Naad-Vigyan • 100% free 
 ## 4. Architecture
 - Static frontend, no framework. Source in `src/` (`index.html`, `styles.css`, `config.js`, `app.js`). `node scripts/build.mjs` inlines them into the single-file bundle `dist/karmic-waves-website.html`. **Edit source, rebuild the bundle.**
 - Backend: Vercel serverless functions in `api/` (`lead.js`, `whatsapp-webhook.js`) with pluggable adapters in `lib/` for storage, Pixel Conversions API and WhatsApp delivery. Missing credentials → adapter reports `PENDING`, never pretends.
-- Config lives in one place: `KW.config` (frontend) and environment variables (backend).
+- Config lives in one place: `KW.freeBirthSound` (frontend) and environment variables (backend).
 
 ## 5. Copy deck (exact wording)
 - Activity bar: "People are exploring their Birth-Month Sound Frequency right now."

@@ -113,8 +113,8 @@ button { cursor: pointer; }
 @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(0,242,254,.7); } 100% { box-shadow: 0 0 0 10px rgba(0,242,254,0); } }
 
 /* ----- layout ----- */
-.page { width: 100%; max-width: var(--col); margin: 0 auto; padding: 24px 16px 40px; display: grid; gap: 18px; }
-@media (min-width: 768px) { .page { padding-top: 40px; gap: 22px; } }
+.fb-page { width: 100%; max-width: var(--col); margin: 0 auto; padding: 24px 16px 40px; display: grid; gap: 18px; }
+@media (min-width: 768px) { .fb-page { padding-top: 40px; gap: 22px; } }
 
 .card {
   position: relative;
@@ -315,7 +315,7 @@ body.modal-open { overflow: hidden; }
     <span>People are exploring their Birth-Month Sound Frequency right now.</span>
   </div>
 
-  <main id="main" class="page">
+  <main id="main" class="fb-page">
 
     <!-- ========== HERO ========== -->
     <header class="hero">
@@ -540,7 +540,7 @@ body.modal-open { overflow: hidden; }
  * Nothing in this file is secret: it ships to the browser.
  */
 window.KW = window.KW || {};
-window.KW.config = {
+window.KW.freeBirthSound = {
   brand: 'Karmic Waves',
 
   // Business WhatsApp number in international format WITHOUT "+" (e.g. "919876543210").
@@ -651,13 +651,13 @@ window.KW.config = {
   }
 };
 
-window.KW.config.previewMode = true; // client preview build
+window.KW.freeBirthSound.previewMode = true; // client preview build
 /* Karmic Waves — application logic (no framework, no build-time dependencies). */
 (function () {
   'use strict';
 
   var KW = window.KW;
-  var cfg = KW.config;
+  var cfg = KW.freeBirthSound;
   var $ = function (sel, root) { return (root || document).querySelector(sel); };
   var $$ = function (sel, root) { return Array.prototype.slice.call((root || document).querySelectorAll(sel)); };
   var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -711,7 +711,7 @@ window.KW.config.previewMode = true; // client preview build
     },
     businessNumberOk: function () { return /^91[6-9]\d{9}$/.test(String(cfg.businessWhatsApp || '')); }
   };
-  KW.util = util; // exposed for tests
+  KW.fbs = KW.fbs || {}; KW.fbs.util = util; // exposed for tests
 
   /* ------------------------------------------------------------------ */
   /* Toast                                                               */
@@ -757,7 +757,7 @@ window.KW.config.previewMode = true; // client preview build
     $('#reviews').hidden = false;
   })();
 
-  $('#year').textContent = String(new Date().getFullYear());
+  var yearEl = $('#year'); if (yearEl) yearEl.textContent = String(new Date().getFullYear());
   if (cfg.previewMode) { $('#preview-ribbon').hidden = false; }
 
   /* ------------------------------------------------------------------ */
@@ -1053,7 +1053,7 @@ window.KW.config.previewMode = true; // client preview build
     }
   };
   pixel.init();
-  KW.pixel = pixel;
+  KW.fbs.pixel = pixel;
 
   /* ------------------------------------------------------------------ */
   /* Lead submit → backend → Pixel → WhatsApp                            */
@@ -1063,7 +1063,7 @@ window.KW.config.previewMode = true; // client preview build
     var text = 'Namaste Karmic Waves, please send my 3 Free Birth-Month Audio Tracks for DOB: ' + d[2] + '/' + d[1] + '/' + d[0];
     return 'https://wa.me/' + cfg.businessWhatsApp + '?text=' + encodeURIComponent(text);
   }
-  KW.waUrl = waUrl;
+  KW.fbs.waUrl = waUrl;
 
   function setStatus(msg, isError) { leadStatus.textContent = msg; leadStatus.classList.toggle('is-error', !!isError); }
 
@@ -1192,7 +1192,7 @@ window.KW.config.previewMode = true; // client preview build
   /* Cleanup on unload: no dangling timers / audio. */
   window.addEventListener('pagehide', function () { clearTimers(); stopWave(); ambient.stop(); });
 
-  KW.state = state; // read-only for tests
+  KW.fbs.state = state; // read-only for tests
 })();
 
 </script>

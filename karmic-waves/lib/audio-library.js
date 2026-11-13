@@ -16,7 +16,7 @@ function loadMonths() {
   const file = path.resolve(__dirname, '..', 'src', 'config.js');
   const sandbox = { window: {} };
   vm.runInNewContext(fs.readFileSync(file, 'utf8'), sandbox);
-  return sandbox.window.KW.config.months;
+  return sandbox.window.KW.freeBirthSound.months;
 }
 
 const months = loadMonths();

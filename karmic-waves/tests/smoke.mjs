@@ -104,7 +104,7 @@ async function session(label, ctxOpts, opts = {}) {
   check('refuses to open WhatsApp with placeholder business number', posted.length === 0 && (await page.textContent('#lead-status')).includes('not configured'));
 
   // Now configure a business number + fake Pixel and run the real path.
-  await page.evaluate(() => { window.KW.config.businessWhatsApp = '919999999999'; window.fbq = function () { if (arguments[1] === 'Lead') window.__leadCalls++; }; window.KW.pixel.loaded = true; });
+  await page.evaluate(() => { window.KW.freeBirthSound.businessWhatsApp = '919999999999'; window.fbq = function () { if (arguments[1] === 'Lead') window.__leadCalls++; }; window.KW.fbs.pixel.loaded = true; });
   await page.click('#send-btn');
   await page.waitForFunction(() => window.__waOpened.length > 0, null, { timeout: 5000 }).catch(() => {});
   check('lead POSTed once', posted.length === 1);
@@ -143,7 +143,7 @@ async function session(label, ctxOpts, opts = {}) {
 {
   const { ctx, page, errors } = await session('tablet', { viewport: { width: 768, height: 1024 }, deviceScaleFactor: 1 });
   check('no horizontal scroll (768)', await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth));
-  const w = await page.locator('.page').boundingBox();
+  const w = await page.locator('.fb-page').boundingBox();
   check('column capped at 460px', w && w.width <= 460);
   await page.screenshot({ path: 'docs/screenshots/tablet-768.png', fullPage: true });
   check('no console errors (768)', errors.length === 0);
@@ -166,7 +166,7 @@ async function session(label, ctxOpts, opts = {}) {
 {
   const { ctx, page } = await session('map', { viewport: { width: 390, height: 844 } });
   const res = await page.evaluate(() => {
-    const m = window.KW.config.months; const files = new Set(); const problems = [];
+    const m = window.KW.freeBirthSound.months; const files = new Set(); const problems = [];
     const expect = { 1: ['Prithvi', 396], 2: ['Jala', 417], 3: ['Agni', 432.8], 4: ['Vayu', 528], 5: ['Akasha', 639], 6: ['Jala', 417], 7: ['Agni', 432.8], 8: ['Prithvi', 396], 9: ['Vayu', 528], 10: ['Akasha', 741], 11: ['Jala', 417], 12: ['Akasha', 852] };
     for (let i = 1; i <= 12; i++) {
       const mo = m[i]; if (!mo) { problems.push('missing month ' + i); continue; }

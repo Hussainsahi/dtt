@@ -3,7 +3,7 @@
  * Nothing in this file is secret: it ships to the browser.
  */
 window.KW = window.KW || {};
-window.KW.config = {
+window.KW.freeBirthSound = {
   brand: 'Karmic Waves',
 
   // Business WhatsApp number in international format WITHOUT "+" (e.g. "919876543210").

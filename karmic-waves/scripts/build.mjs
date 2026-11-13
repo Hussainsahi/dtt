@@ -15,7 +15,7 @@ mkdirSync(dist(''), { recursive: true });
 // Evaluate config.js in a sandbox to read site metadata (no secrets live there).
 const sandbox = { window: {} };
 vm.runInNewContext(readFileSync(src('config.js'), 'utf8'), sandbox);
-const cfg = sandbox.window.KW.config;
+const cfg = sandbox.window.KW.freeBirthSound;
 
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
 const fillMeta = (html) => html
@@ -28,7 +28,7 @@ const fillMeta = (html) => html
 let html = fillMeta(readFileSync(src('index.html'), 'utf8'));
 const css = readFileSync(src('styles.css'), 'utf8');
 const preview = process.env.KW_PREVIEW === '1';
-const js = readFileSync(src('config.js'), 'utf8') + (preview ? '\nwindow.KW.config.previewMode = true; // client preview build\n' : '\n') + readFileSync(src('app.js'), 'utf8');
+const js = readFileSync(src('config.js'), 'utf8') + (preview ? '\nwindow.KW.freeBirthSound.previewMode = true; // client preview build\n' : '\n') + readFileSync(src('app.js'), 'utf8');
 
 // Replacer FUNCTIONS: a replacement string would interpret `$$`, `$&` etc. inside the JS.
 const bundle = html

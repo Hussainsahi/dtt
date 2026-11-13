@@ -29,7 +29,7 @@ npm run grep:paid                # guard: no paid-flow terms in the frontend
 ```
 Real adapters locally: `node --env-file=.env scripts/dev-server.mjs`.
 
-## Configure before launch (src/config.js)
+## Configure before launch (src/config.js → `KW.freeBirthSound`)
 | Key | What |
 |---|---|
 | `businessWhatsApp` | `91XXXXXXXXXX` → real business number. The page refuses to open wa.me while it is a placeholder. |
