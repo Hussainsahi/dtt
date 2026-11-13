@@ -27,13 +27,15 @@ const fillMeta = (html) => html
 
 let html = fillMeta(readFileSync(src('index.html'), 'utf8'));
 const css = readFileSync(src('styles.css'), 'utf8');
-const js = readFileSync(src('config.js'), 'utf8') + '\n' + readFileSync(src('app.js'), 'utf8');
+const preview = process.env.KW_PREVIEW === '1';
+const js = readFileSync(src('config.js'), 'utf8') + (preview ? '\nwindow.KW.config.previewMode = true; // client preview build\n' : '\n') + readFileSync(src('app.js'), 'utf8');
 
 // Replacer FUNCTIONS: a replacement string would interpret `$$`, `$&` etc. inside the JS.
 const bundle = html
   .replace(/<!-- build:css -->[\s\S]*?<!-- \/build:css -->/, () => `<style>\n${css}\n</style>`)
   .replace(/<!-- build:js -->[\s\S]*?<!-- \/build:js -->/, () => `<script>\n${js.replace(/<\/script/gi, () => '<\\/script')}\n</script>`);
 
+if (preview) { writeFileSync(dist('karmic-waves-client-preview.html'), bundle); console.log('built dist/karmic-waves-client-preview.html (preview mode)'); process.exit(0); }
 writeFileSync(dist('karmic-waves-website.html'), bundle);
 writeFileSync(dist('index.html'), bundle); // Vercel serves dist/ as the static root
 writeFileSync(dist('index.unbundled.html'), html);

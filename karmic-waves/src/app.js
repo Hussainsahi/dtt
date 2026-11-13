@@ -104,6 +104,7 @@
   })();
 
   $('#year').textContent = String(new Date().getFullYear());
+  if (cfg.previewMode) { $('#preview-ribbon').hidden = false; }
 
   /* ------------------------------------------------------------------ */
   /* DOB console                                                         */
@@ -431,6 +432,13 @@
     var e164 = validatePhoneUI();
     if (!e164) { phoneInput.focus(); return; }
     if (!state.dob) { toast('Please select your date of birth first.'); return; }
+    if (cfg.previewMode) {
+      /* Client preview build: no backend, no Pixel, no WhatsApp hand-off. Shows exactly what production would do. */
+      var d = state.dob.iso.split('-');
+      setStatus('PREVIEW — in the live version this stores the lead, then opens WhatsApp to the business number with: \u201CNamaste Karmic Waves, please send my 3 Free Birth-Month Audio Tracks for DOB: ' + d[2] + '/' + d[1] + '/' + d[0] + '\u201D');
+      toast('Preview build: nothing was sent or stored.');
+      return;
+    }
     if (!util.businessNumberOk()) {
       setStatus('WhatsApp number for the business is not configured yet. Please try again later.', true);
       return;
